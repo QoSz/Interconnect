@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased min-h-screen flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white`}>
         <Navigation />
-        <main className="flex-1">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );
