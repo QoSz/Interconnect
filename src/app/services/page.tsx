@@ -31,9 +31,9 @@ const services = [
         borderColor: 'hover:border-green-500'
     },
     {
-        name: 'Consulting',
+        name: 'IT Consulting',
         description: 'Expert IT insights and strategy to drive your business growth.',
-        href: '/services/consulting',
+        href: '/services/it-consulting',
         icon: Briefcase,
         bgColor: 'bg-yellow-600/10',
         hoverBgColor: 'hover:bg-yellow-600/20',
