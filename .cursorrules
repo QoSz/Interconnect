@@ -1,0 +1,77 @@
+# Interconnect Project Patterns and Preferences
+
+## Code Style Patterns
+
+### Component Naming Convention
+- Use PascalCase for component names
+- Use descriptive, feature-based naming
+- Example: `HeroSection.tsx`, `ServiceCard.tsx`
+
+### File Organization
+- Group components by feature/page in directories
+- Shared components go in `/components/shared`
+- Basic UI components go in `/components/ui`
+- Page components are imported into corresponding page.tsx files
+
+### CSS Patterns
+- TailwindCSS for all styling
+- Use consistent color variables (purple, indigo theme)
+- Mobile-first approach to responsive design
+- Group related utility classes for readability
+
+### Animation Preferences
+- Keep animations subtle and purposeful
+- Use CSS animations for simple transitions
+- Use Framer Motion for more complex animations
+- Typing animation in headers is a distinctive brand element
+
+## Architectural Patterns
+
+### Component Structure
+- Break down pages into logical component sections
+- Each section should be a separate component
+- Use composition for component building
+- Keep components focused on a single responsibility
+
+### Next.js App Router Pattern
+- Use server components by default
+- Use client components only where interactivity is needed
+- Utilize metadata for SEO in layout files
+- Leverage the new features of Next.js 15
+
+## Project-Specific Knowledge
+
+### Brand Identity
+- Purple/indigo color scheme is central to brand identity
+- Modern, clean aesthetic with gradient elements
+- Professional but approachable tone
+- High-tech feel with smooth animations
+
+### Content Structure
+- Services are grouped into four main categories:
+  - Web Development
+  - Social Media Management
+  - Cybersecurity
+  - IT Consulting
+- Each service page should follow consistent layout
+- FAQ answers common questions about services
+
+### Critical Implementation Areas
+- Responsive design is high priority
+- Form validation and submission handling
+- Smooth animations that don't impact performance
+- Call-to-action placement and effectiveness
+
+## User Preferences
+
+### Development Workflow
+- Start development server with `npm run dev`
+- Use TurboBack for faster development experience
+- Component-first development approach
+- Implement page sections progressively
+
+### Implementation Priority
+- Focus on core pages first (Home, Services, About, Contact)
+- Secondary features come after core functionality
+- Performance optimization as ongoing concern
+- Responsive design throughout development 

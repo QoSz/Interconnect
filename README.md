@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Interconnect - Driving Digital Transformation
 
-## Getting Started
+[![Interconnect Website](https://img.shields.io/badge/Website-interconnect.co.ke-blue?style=flat-square&logo=world&logoColor=white)](https://www.interconnect.co.ke)
 
-First, run the development server:
+Welcome to the GitHub repository for Interconnect!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About Interconnect
+
+Interconnect is a forward-thinking technology partner dedicated to helping businesses thrive in the digital landscape. We specialize in delivering innovative solutions tailored to meet the unique needs of our clients. Our core service areas include:
+
+*   **Web Development:** Crafting modern, responsive, and high-performance websites and web applications.
+*   **Social Media Management:** Building engaging online presences and connecting brands with their audiences.
+*   **Cybersecurity:** Protecting digital assets and ensuring robust security postures.
+*   **IT Consulting:** Providing expert guidance to optimize technology strategies and infrastructure.
+
+Our mission is to empower businesses through technology, driving growth and efficiency. Visit our official website to learn more: [https://www.interconnect.co.ke](https://www.interconnect.co.ke)
+
+## About This Repository
+
+This repository contains the source code for the official Interconnect company website, built with [Next.js](https://nextjs.org/) and styled with [Tailwind CSS](https://tailwindcss.com/).
+
+## Getting Started (Development)
+
+If you'd like to run this project locally:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    # or
+    bun install
+    ```
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    # or
+    bun dev
+    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Contributions are welcome! Please refer to the contribution guidelines (if available) or open an issue to discuss potential changes.
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+MIT License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Please consider referencing the original source at [https://www.interconnect.co.ke](https://www.interconnect.co.ke) when using this code.
