@@ -1,7 +1,34 @@
-import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon, ShieldCheckIcon, LockIcon, ServerIcon, DatabaseZapIcon } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Comprehensive Cyber Security Services',
+  description: 'Interconnect offers robust cyber security solutions in Kenya, including vulnerability assessments, penetration testing, threat monitoring, and data protection to safeguard your digital assets.',
+  keywords: [
+    'cyber security Kenya',
+    'vulnerability assessment Kenya',
+    'penetration testing Kenya',
+    'threat monitoring Kenya',
+    'data protection Kenya',
+    'Interconnect cyber security',
+    'IT security solutions Kenya',
+    'network security Nairobi',
+  ],
+  openGraph: {
+    title: 'Interconnect - Advanced Cyber Security Solutions',
+    description: 'Protect your business with Interconnect\'s expert cyber security services, offering comprehensive defense against digital threats in Kenya.',
+    url: '/services/cyber-security'
+  },
+  twitter: {
+    title: 'Cyber Security Services | Interconnect Kenya',
+    description: 'Safeguard your digital infrastructure with Interconnect. We provide top-tier cyber security solutions tailored for Kenyan businesses.',
+  },
+  alternates: {
+    canonical: '/services/cyber-security',
+  },
+};
 
 const features = [
   {

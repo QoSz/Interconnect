@@ -1,7 +1,33 @@
-import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon, BriefcaseIcon, LightbulbIcon, TrendingUpIcon, SettingsIcon } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Strategic IT Consulting Services',
+  description: 'Interconnect provides expert IT consulting services in Kenya, offering strategic planning, technology advisory, and process optimization to drive business growth and efficiency.',
+  keywords: [
+    'IT consulting Kenya',
+    'strategic IT planning Kenya',
+    'technology advisory Kenya',
+    'IT process optimization Kenya',
+    'Interconnect IT consulting',
+    'business technology solutions Kenya',
+    'digital transformation Kenya',
+  ],
+  openGraph: {
+    title: 'Interconnect - Strategic IT Consulting for Business Growth',
+    description: 'Leverage Interconnect\'s IT consulting expertise for strategic planning, technology advisory, and process improvement to scale your business in Kenya.',
+    url: '/services/it-consulting'
+  },
+  twitter: {
+    title: 'IT Consulting Services | Interconnect Kenya',
+    description: 'Drive innovation and efficiency with Interconnect\'s strategic IT consulting. We help businesses in Kenya leverage technology for growth.'
+  },
+  alternates: {
+    canonical: '/services/it-consulting',
+  },
+};
 
 const features = [
   {

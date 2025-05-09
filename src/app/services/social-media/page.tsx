@@ -1,7 +1,33 @@
-import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon, UsersIcon, Edit3Icon, TrendingUpIcon, MegaphoneIcon } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Social Media Management Services',
+  description: 'Interconnect offers expert social media management, content creation, and targeted ad campaigns to amplify your brand presence and engagement in Kenya.',
+  keywords: [
+    'social media management Kenya',
+    'social media marketing Kenya',
+    'content creation Kenya',
+    'social media advertising Kenya',
+    'Interconnect social media',
+    'brand engagement Kenya',
+    'digital marketing services Kenya',
+  ],
+  openGraph: {
+    title: 'Interconnect - Expert Social Media Management',
+    description: 'Boost your brand with Interconnect\'s strategic social media management, content creation, and targeted advertising services in Kenya.',
+    url: '/services/social-media'
+  },
+  twitter: {
+    title: 'Social Media Management | Interconnect Kenya',
+    description: 'Amplify your brand online with Interconnect\'s comprehensive social media services. Let\'s grow your audience!'
+  },
+  alternates: {
+    canonical: '/services/social-media',
+  },
+};
 
 const features = [
   {

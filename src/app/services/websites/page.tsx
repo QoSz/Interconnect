@@ -1,7 +1,34 @@
-import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon, CodeIcon, PaletteIcon, ShoppingCartIcon, TabletSmartphoneIcon } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Custom Website Development Services',
+  description: 'Interconnect specializes in custom website design and development using modern technologies like Next.js and React. We build responsive, SEO-friendly, and e-commerce ready websites in Kenya.',
+  keywords: [
+    'custom website development Kenya',
+    'Next.js development Kenya',
+    'React development Kenya',
+    'e-commerce website Kenya',
+    'responsive web design Kenya',
+    'SEO friendly websites Kenya',
+    'Interconnect web services',
+    'website design Nairobi',
+  ],
+  openGraph: {
+    title: 'Interconnect - Custom Website Development Experts',
+    description: 'Get a high-performance, visually stunning, and SEO-optimized website built by Interconnect. Specializing in Next.js, React, and e-commerce solutions.',
+    url: '/services/websites'
+  },
+  twitter: {
+    title: 'Custom Web Development | Interconnect Kenya',
+    description: 'Elevate your online presence with a custom-built website from Interconnect. We deliver responsive, fast, and engaging web solutions.'
+  },
+  alternates: {
+    canonical: '/services/websites',
+  },
+};
 
 const features = [
   {

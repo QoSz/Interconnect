@@ -1,5 +1,32 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Globe, ShieldCheck, Users } from 'lucide-react'; // Using lucide-react for icons
+import { Briefcase, Globe, ShieldCheck, Users } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Our Digital Services',
+  description: 'Explore Interconnect\'s comprehensive digital services including custom Web Development, strategic Social Media Management, robust Cyber Security solutions, and expert IT Consulting in Kenya.',
+  keywords: [
+    'Interconnect services',
+    'digital services Kenya',
+    'web development services',
+    'social media management services',
+    'cyber security services',
+    'IT consulting services',
+    'full-service digital agency Kenya',
+  ],
+  openGraph: {
+    title: 'Interconnect Digital Services - Web, Social, Security, IT Consulting',
+    description: 'Discover how Interconnect can elevate your business with our expert Web Development, Social Media, Cyber Security, and IT Consulting services.',
+    url: '/services'
+  },
+  twitter: {
+    title: 'Interconnect Services | Elevate Your Digital Presence',
+    description: 'From web development to cyber security, Interconnect offers a suite of services to meet your digital needs in Kenya.'
+  },
+  alternates: {
+    canonical: '/services',
+  },
+};
 
 const services = [
     {

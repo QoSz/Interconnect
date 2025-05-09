@@ -1,13 +1,37 @@
-export default function About() {
+import type { Metadata } from 'next';
+
+import About from './About';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Meet the passionate team behind Interconnect. Learn about our mission, values, and the expertise of Yash Shah and Nirav Challa, driving innovative digital solutions in Kenya.',
+  keywords: [
+    'about Interconnect',
+    'Interconnect team',
+    'Yash Shah',
+    'Nirav Challa',
+    'digital solutions Kenya founders',
+    'our mission',
+    'company values',
+    'tech startup Kenya',
+    'Kenyan tech entrepreneurs',
+  ],
+  openGraph: {
+    title: 'About Interconnect - Our Team and Mission',
+    description: 'Discover the dedicated team, Yash Shah and Nirav Challa, and the core values that drive Interconnect. We are passionate about delivering exceptional digital solutions.',
+    url: '/about', // Resolves to https://www.interconnect.co.ke/about
+  },
+  twitter: {
+    title: 'Meet the Team Behind Interconnect',
+    description: 'Learn about Yash Shah and Nirav Challa, the founders of Interconnect, and their vision for digital excellence in Kenya.'
+  },
+  alternates: {
+    canonical: '/about',
+  },
+};
+
+export default function AboutPage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white">
-      <div className="text-center p-8 bg-white/10 backdrop-blur-md rounded-xl shadow-2xl">
-        <h1 className="text-6xl font-bold mb-4">Coming Soon!</h1>
-        <p className="text-2xl mb-8">
-          We're working hard to bring you an amazing About Us page.
-        </p>
-        <p className="text-lg">Stay tuned for more updates!</p>
-      </div>
-    </div>
+    <About />
   );
 }
