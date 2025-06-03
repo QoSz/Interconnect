@@ -12,7 +12,7 @@ export default function Hero() {
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
     
     const messages = [
-        "Interconnect: Your connection to digital world...",
+        "Interconnect: Your connection to the digital world...",
         "Websites that don't just exist, they engage.",
         "Amplify your brand, dominate social media.",
         "Secure your connections, protect your future.",
@@ -94,11 +94,11 @@ export default function Hero() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                    <Link href="/contact" className="w-auto inline-block px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transform hover:scale-105 transition duration-300 shadow-lg shadow-indigo-500/25 text-sm sm:text-base">
-                        Get Started
-                    </Link>
-                    <Link href="/services" className="w-auto inline-block px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 bg-transparent border-2 border-purple-500 text-purple-200 font-medium rounded-lg hover:bg-purple-900/30 transform hover:scale-105 transition duration-300 text-sm sm:text-base">
+                    <Link href="/services" className="w-auto inline-block px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transform hover:scale-105 transition duration-300 shadow-lg shadow-indigo-500/25 text-sm sm:text-base">
                         Our Services
+                    </Link>
+                    <Link href="/contact" className="w-auto inline-block px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 bg-transparent border-2 border-purple-500 text-purple-200 font-medium rounded-lg hover:bg-purple-900/30 transform hover:scale-105 transition duration-300 text-sm sm:text-base">
+                        Get Started
                     </Link>
                 </div>
             </div>

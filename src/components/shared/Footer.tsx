@@ -6,6 +6,7 @@ import {
     Share2,
     ShieldCheck,
     Briefcase,
+    Bot,
     Mail,
     Home,
     Phone,
@@ -21,7 +22,7 @@ const quickLinks = [
 const serviceLinks = [
     { href: "/services/websites", label: "Websites", icon: Globe },
     { href: "/services/social-media", label: "Social Media", icon: Share2 },
-    { href: "/services/cyber-security", label: "Cyber Security", icon: ShieldCheck },
+    { href: "/services/ai-automation", label: "AI Automation", icon: Bot },
     { href: "/services/it-consulting", label: "IT Consulting", icon: Briefcase },
 ];
 

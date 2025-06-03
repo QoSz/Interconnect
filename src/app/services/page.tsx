@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Globe, ShieldCheck, Users } from 'lucide-react';
+import { Briefcase, Globe, Users, Bot } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Our Digital Services',
@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     'digital services Kenya',
     'web development services',
     'social media management services',
-    'cyber security services',
     'IT consulting services',
     'full-service digital agency Kenya',
   ],
@@ -49,13 +48,13 @@ const services = [
         borderColor: 'hover:border-blue-500'
     },
     {
-        name: 'Cyber Security',
-        description: 'Robust security solutions to protect your digital assets from threats.',
-        href: '/services/cyber-security',
-        icon: ShieldCheck,
-        bgColor: 'bg-green-600/10',
-        hoverBgColor: 'hover:bg-green-600/20',
-        borderColor: 'hover:border-green-500'
+        name: 'AI Automation',
+        description: 'Intelligent automation solutions to streamline your business processes.',
+        href: '/services/ai-automation',
+        icon: Bot,
+        bgColor: 'bg-emerald-600/10',
+        hoverBgColor: 'hover:bg-emerald-600/20',
+        borderColor: 'hover:border-emerald-500'
     },
     {
         name: 'IT Consulting',
