@@ -39,16 +39,16 @@ export default function Contact() {
                                  href="tel:+254788871946" 
                                  className="text-lg sm:text-xl text-gray-200 font-medium transition hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent"
                              >
-                                 +254 788 871946
+                                 +254 788 871 946
                              </a>
                          </div>
                          <div className="flex items-center justify-center space-x-2 sm:space-x-3 group">
                              <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 group-hover:text-blue-400 transition-colors duration-200" />
                              <a 
-                                 href="tel:+254721670001" 
+                                 href="tel:+447586752568" 
                                  className="text-lg sm:text-xl text-gray-200 font-medium transition hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent"
                              >
-                                 +254 721 670001
+                                 +447 586 752 568
                              </a>
                          </div>
                     </div>
