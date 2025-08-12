@@ -48,7 +48,7 @@ export default function Contact() {
                                  href="tel:+447586752568" 
                                  className="text-lg sm:text-xl text-gray-200 font-medium transition hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent"
                              >
-                                 +447 586 752 568
+                                 +44 7586 752 568
                              </a>
                          </div>
                     </div>
