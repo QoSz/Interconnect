@@ -3,13 +3,13 @@ import Contact from './Contact';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Get in touch with Interconnect for web development, social media management, cyber security, or IT consulting services in Kenya. Contact Yash Shah and Nirav Challa today to discuss your project.',
+  description: 'Get in touch with Interconnect for web development, digital marketing, AI automation, or IT consulting services in Kenya. Contact Yash Shah and Nirav Challa today to discuss your project.',
   keywords: [
     'contact Interconnect',
     'Kenya IT support contact',
     'web development contact Kenya',
-    'social media marketing Kenya contact',
-    'cyber security Kenya contact',
+    'digital marketing Kenya contact',
+    'AI automation Kenya contact',
     'IT consulting Nairobi contact',
     'Interconnect phone number',
     'Interconnect email address',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: 'Contact Interconnect | Digital Solutions Kenya',
-    description: 'Connect with Interconnect for innovative web, social media, cyber security, and IT consulting services. Let\'s talk!'
+    description: 'Connect with Interconnect for innovative web, digital marketing, AI automation, and IT consulting services. Let\'s talk!'
   },
   alternates: {
     canonical: '/contact',

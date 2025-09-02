@@ -21,7 +21,7 @@ export default function NotFound() {
                     Oops! Page Not Found
                 </h2>
                 <p className="text-base sm:text-lg text-gray-400 mb-8 max-w-md mx-auto animate-fade-in-up animation-delay-400">
-                    The page you're looking for doesn't seem to exist. Maybe it was moved, or perhaps you mistyped the URL?
+                    The page you&#39;re looking for doesn&#39;t seem to exist. Maybe it was moved, or perhaps you mistyped the URL?
                 </p>
                 <div className="animate-fade-in-up animation-delay-600">
                     <Link href="/">

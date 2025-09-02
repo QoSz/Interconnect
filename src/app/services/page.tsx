@@ -4,23 +4,23 @@ import { Briefcase, Globe, Users, Bot } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Our Digital Services',
-  description: 'Explore Interconnect\'s comprehensive digital services including custom Web Development, strategic Social Media Management, robust Cyber Security solutions, and expert IT Consulting in Kenya.',
+  description: 'Explore Interconnect\'s comprehensive digital services including custom Web Development, strategic Digital Marketing, robust AI Automation solutions, and expert IT Consulting in Kenya.',
   keywords: [
     'Interconnect services',
     'digital services Kenya',
     'web development services',
-    'social media management services',
+    'digital marketing services',
     'IT consulting services',
     'full-service digital agency Kenya',
   ],
   openGraph: {
-    title: 'Interconnect Digital Services - Web, Social, Security, IT Consulting',
-    description: 'Discover how Interconnect can elevate your business with our expert Web Development, Social Media, Cyber Security, and IT Consulting services.',
+    title: 'Interconnect Digital Services - Web, Digital Marketing, AI Automation, IT Consulting',
+    description: 'Discover how Interconnect can elevate your business with our expert Web Development, Digital Marketing, AI Automation, and IT Consulting services.',
     url: '/services'
   },
   twitter: {
     title: 'Interconnect Services | Elevate Your Digital Presence',
-    description: 'From web development to cyber security, Interconnect offers a suite of services to meet your digital needs in Kenya.'
+    description: 'From web development to AI automation, Interconnect offers a suite of services to meet your digital needs in Kenya.'
   },
   alternates: {
     canonical: '/services',
@@ -38,9 +38,9 @@ const services = [
         borderColor: 'hover:border-purple-500'
     },
     {
-        name: 'Social Media',
+        name: 'Digital Marketing',
         description: 'Engaging content and strategic campaigns to elevate your online presence.',
-        href: '/services/social-media',
+        href: '/services/digital-marketing',
         icon: Users,
         bgColor: 'bg-purple-600/10',
 

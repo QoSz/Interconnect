@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -11,14 +11,14 @@ export default function Hero() {
     
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
     
-    const messages = [
+    const messages = useMemo(() => [
         "Interconnect: Your connection to the digital world...",
-        "Websites that don't just exist, they engage.",
-        "Amplify your brand, dominate social media.",
+        "Websites that don&#39;t just exist, they engage.",
+        "Amplify your brand, dominate digital marketing.",
         "Secure your connections, protect your future.",
         "Strategic IT insights for exponential growth.",
-        "Let's build something amazing, together."
-    ];
+        "Let&#39;s build something amazing, together."
+    ], []);
     
     const handleTyping = useCallback(() => {
         const currentMessage = messages[messageIndex];
@@ -89,15 +89,12 @@ export default function Hero() {
                 </div>
                 
                 <p className="text-base sm:text-lg text-gray-300 mb-5 md:mb-8 max-w-3xl mx-auto px-2">
-                    Specializing in Web Development, Social Media Management, 
-                    Cyber Security, and Professional IT Consulting
+                    Specializing in Web Development, AI Automation, 
+                    Digital Marketing, and IT Consulting
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                     <Link href="/services" className="w-auto inline-block px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transform hover:scale-105 transition duration-300 shadow-lg shadow-indigo-500/25 text-sm sm:text-base">
-                        Our Services
-                    </Link>
-                    <Link href="/contact" className="w-auto inline-block px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 bg-transparent border-2 border-purple-500 text-purple-200 font-medium rounded-lg hover:bg-purple-900/30 transform hover:scale-105 transition duration-300 text-sm sm:text-base">
                         Get Started
                     </Link>
                 </div>

@@ -16,7 +16,7 @@ export default function Contact() {
                     Contact Us
                 </h1>
                 <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8">
-                    We'd love to hear from you! Reach out through any of the channels below.
+                    We&#39;d love to hear from you! Reach out through any of the channels below.
                 </p>
 
                 <div className="space-y-4 sm:space-y-6">

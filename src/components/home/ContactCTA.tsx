@@ -12,7 +12,7 @@ export default function ContactCTA() {
                 Ready to Start Your Project?
             </h2>
             <p className="text-slate-300 mb-10 max-w-xl mx-auto text-lg relative z-10">
-                Let's discuss how we can help you achieve your goals. Contact us today for a free consultation!
+                Let&#39;s discuss how we can help you achieve your goals. Contact us today for a free consultation!
             </p>
             
             {/* Enhanced button with better hover effects */}

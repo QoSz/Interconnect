@@ -65,7 +65,7 @@ export default function WebsitesPage() {
           Custom-Built Websites That Convert
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-          We don't just build websites; we create digital experiences designed specifically for your brand. From stunning visuals to smooth performance, get a website that truly stands out and drives results.
+          We don&#39;t just build websites; we create digital experiences designed specifically for your brand. From stunning visuals to smooth performance, get a website that truly stands out and drives results.
         </p>
         <Link href="/contact">
           <Button size="lg" className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700 group transform hover:scale-105 transition duration-300 shadow-lg shadow-indigo-500/25">
@@ -102,7 +102,7 @@ export default function WebsitesPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-semibold text-purple-100 mb-4">Ready to Elevate Your Online Presence?</h2>
           <p className="text-lg text-purple-200/90 max-w-2xl mx-auto mb-8">
-            Let's discuss how we can build a website that not only looks great but also achieves your business goals.
+            Let&#39;s discuss how we can build a website that not only looks great but also achieves your business goals.
           </p>
           <Link href="/contact">
             <Button size="lg" className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700 group transform hover:scale-105 transition duration-300 shadow-lg shadow-indigo-500/25">

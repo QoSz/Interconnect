@@ -22,7 +22,7 @@ export default function Faq() {
                         {[
                             {
                                 question: "What services do you offer?",
-                                answer: "We specialize in providing tailored solutions across Web Development, Social Media Management, Cyber Security, and IT Consulting. As a focused team, we work closely with you to understand your unique needs and deliver high-impact results."
+                                answer: "We specialize in providing tailored solutions across Web Development, Digital Marketing, AI Automation, and IT Consulting. As a focused team, we work closely with you to understand your unique needs and deliver high-impact results."
                             },
                             {
                                 question: "How does your pricing work?",
@@ -33,12 +33,12 @@ export default function Faq() {
                                 answer: "As a dedicated two-person startup, you'll work directly with the founders. This ensures clear communication, deep understanding of your goals, and a highly personalized service experience from start to finish."
                             },
                             {
-                                question: "How do you ensure the quality and security of your web development and cyber security services?",
+                                question: "How do you ensure the quality and security of your web development and AI automation services?",
                                 answer: "We adhere to industry best practices for both development and security. Our process includes rigorous testing, code reviews, and proactive security measures to protect your digital assets and ensure robust, reliable solutions."
                             },
                             {
-                                question: "What makes your approach to Social Media Management effective?",
-                                answer: "We focus on creating authentic engagement and data-driven strategies tailored to your brand's voice and audience. Our approach combines creative content with analytics to maximize your social media impact and achieve measurable results."
+                                question: "What makes your approach to Digital Marketing effective?",
+                                answer: "We focus on creating authentic engagement and data-driven strategies tailored to your brand's voice and audience. Our approach combines creative content with analytics to maximize your digital marketing impact and achieve measurable results."
                             },
                             {
                                 question: "How quickly can you start on a new project?",

@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
     Globe,
     Share2,
-    ShieldCheck,
     Briefcase,
     Bot,
     Mail,
@@ -21,7 +20,7 @@ const quickLinks = [
 
 const serviceLinks = [
     { href: "/services/websites", label: "Websites", icon: Globe },
-    { href: "/services/social-media", label: "Social Media", icon: Share2 },
+    { href: "/services/digital-marketing", label: "Digital Marketing", icon: Share2 },
     { href: "/services/ai-automation", label: "AI Automation", icon: Bot },
     { href: "/services/it-consulting", label: "IT Consulting", icon: Briefcase },
 ];

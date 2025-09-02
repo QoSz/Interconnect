@@ -1,6 +1,6 @@
 "use client";
 
-import { User } from 'lucide-react';
+import { User, Linkedin } from 'lucide-react';
 
 const teamMembers = [
   {
@@ -8,12 +8,14 @@ const teamMembers = [
     name: "Yash Shah",
     title: "Co-Founder & Tech Lead",
     description: "Yash is a passionate technologist and problem solver, dedicated to crafting innovative and efficient digital solutions. He leads our development efforts with a keen eye for detail and a drive for excellence.",
+    linkedin: "https://www.linkedin.com/in/yashashah7/",
   },
   {
     id: 2,
     name: "Nirav Challa",
     title: "Co-Founder & Strategy Lead",
     description: "Nirav brings strategic vision and a client-focused approach to Interconnect. He excels at understanding business needs and translating them into impactful digital strategies that drive growth.",
+    linkedin: "https://www.linkedin.com/in/niravchalla/",
   },
 ];
 
@@ -57,9 +59,20 @@ export default function About() {
                 {member.title}
               </p>
               {/* Description */}
-              <p className="text-gray-300/90 text-base leading-relaxed">
+              <p className="text-gray-300/90 text-base leading-relaxed mb-6">
                 {member.description}
               </p>
+              
+              {/* LinkedIn Button */}
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-400/40 border border-blue-400/20 hover:border-blue-300/40"
+              >
+                <Linkedin className="w-5 h-5 text-blue-200" />
+                Connect on LinkedIn
+              </a>
             </div>
           ))}
         </div>

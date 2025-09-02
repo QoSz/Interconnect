@@ -9,8 +9,8 @@ Welcome to the GitHub repository for Interconnect!
 Interconnect is a forward-thinking technology partner dedicated to helping businesses thrive in the digital landscape. We specialize in delivering innovative solutions tailored to meet the unique needs of our clients. Our core service areas include:
 
 *   **Web Development:** Crafting modern, responsive, and high-performance websites and web applications.
-*   **Social Media Management:** Building engaging online presences and connecting brands with their audiences.
-*   **Cybersecurity:** Protecting digital assets and ensuring robust security postures.
+*   **Digital Marketing:** Building engaging online presences and connecting brands with their audiences.
+*   **AI Automation:** Implementing intelligent automation solutions to streamline business processes.
 *   **IT Consulting:** Providing expert guidance to optimize technology strategies and infrastructure.
 
 Our mission is to empower businesses through technology, driving growth and efficiency. Visit our official website to learn more: [https://www.interconnect.co.ke](https://www.interconnect.co.ke)

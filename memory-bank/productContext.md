@@ -6,7 +6,7 @@ Interconnect exists to establish a professional online presence for a digital se
 ## Problems Solved
 1. **Business Visibility**: Creates an online presence for the digital services company, making it discoverable to potential clients searching for such services.
    
-2. **Service Communication**: Clearly communicates the range of services offered (web development, social media management, cybersecurity, IT consulting) to help potential clients understand how the company can meet their needs.
+2. **Service Communication**: Clearly communicates the range of services offered (web development, digital marketing, AI automation, IT consulting) to help potential clients understand how the company can meet their needs.
    
 3. **Trust Building**: Establishes credibility through professional design, testimonials, and detailed service information.
    

@@ -1,7 +1,7 @@
 # Project Brief: Interconnect
 
 ## Project Overview
-Interconnect is a modern web application built with Next.js that serves as a business website for a digital services company. The company offers various digital services including web development, social media management, cybersecurity, and IT consulting.
+Interconnect is a modern web application built with Next.js that serves as a business website for a digital services company. The company offers various digital services including web development, digital marketing, AI automation, and IT consulting.
 
 ## Core Requirements
 1. Create a professional, engaging website that showcases the company's services
@@ -20,8 +20,8 @@ Interconnect is a modern web application built with Next.js that serves as a bus
 ## Target Audience
 - Businesses looking for digital services
 - Individuals seeking professional IT consulting
-- Organizations needing cybersecurity solutions
-- Companies requiring social media management
+- Organizations needing AI automation solutions
+- Companies requiring digital marketing
 
 ## Technical Scope
 - Next.js frontend application

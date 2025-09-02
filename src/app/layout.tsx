@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     template: "%s | Interconnect",
   },
   description:
-    "Interconnect offers cutting-edge web development, strategic social media management, robust cyber security solutions, and expert IT consulting in Kenya. Connect with us to elevate your digital presence.",
+    "Interconnect offers cutting-edge web development, strategic digital marketing, robust AI automation solutions, and expert IT consulting in Kenya. Connect with us to elevate your digital presence.",
   keywords: [
     "web development Kenya",
-    "social media management Kenya",
-    "cyber security Kenya",
+    "digital marketing Kenya",
+    "AI automation Kenya",
     "IT consulting Kenya",
     "digital solutions Kenya",
     "Interconnect",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Interconnect | Your Connection to the Digital World",
-    description: "Leading digital solutions in Kenya: Web Development, Social Media, Cyber Security, IT Consulting.",
+    description: "Leading digital solutions in Kenya: Web Development, Digital Marketing, AI Automation, IT Consulting.",
     url: siteUrl,
     siteName: "Interconnect",
     locale: "en_KE",

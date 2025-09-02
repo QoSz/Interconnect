@@ -102,7 +102,7 @@ export default function AIAutomationPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-semibold text-green-100 mb-4">Ready to Embrace the AI Revolution?</h2>
           <p className="text-lg text-green-200/95 max-w-2xl mx-auto mb-8">
-            Let's explore how AI automation can solve your specific challenges and unlock new opportunities for growth and efficiency.
+            Let&#39;s explore how AI automation can solve your specific challenges and unlock new opportunities for growth and efficiency.
           </p>
           <Link href="/contact">
             <Button size="lg" className="bg-gradient-to-r from-green-600 to-lime-600 text-white hover:from-green-700 hover:to-lime-700 group transform hover:scale-105 transition duration-300 shadow-lg shadow-green-500/30">

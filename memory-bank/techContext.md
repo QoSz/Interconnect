@@ -45,7 +45,7 @@
 - Semantic HTML structure
 - Proper meta tags and descriptions
 - Optimized for search engines
-- Social media sharing capabilities
+- Digital marketing sharing capabilities
 
 ## Development Setup
 

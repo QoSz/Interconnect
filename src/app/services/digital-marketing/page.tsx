@@ -4,36 +4,36 @@ import { Button } from '@/components/ui/button';
 import { ArrowRightIcon, UsersIcon, Edit3Icon, TrendingUpIcon, MegaphoneIcon } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Social Media Management Services',
-  description: 'Interconnect offers expert social media management, content creation, and targeted ad campaigns to amplify your brand presence and engagement in Kenya.',
+  title: 'Digital Marketing Services',
+  description: 'Interconnect offers expert digital marketing, content creation, and targeted ad campaigns to amplify your brand presence and engagement in Kenya.',
   keywords: [
-    'social media management Kenya',
-    'social media marketing Kenya',
+    'digital marketing Kenya',
+    'digital marketing services Kenya',
     'content creation Kenya',
-    'social media advertising Kenya',
-    'Interconnect social media',
+    'digital advertising Kenya',
+    'Interconnect digital marketing',
     'brand engagement Kenya',
     'digital marketing services Kenya',
   ],
   openGraph: {
-    title: 'Interconnect - Expert Social Media Management',
-    description: 'Boost your brand with Interconnect\'s strategic social media management, content creation, and targeted advertising services in Kenya.',
-    url: '/services/social-media'
+    title: 'Interconnect - Expert Digital Marketing',
+    description: 'Boost your brand with Interconnect\'s strategic digital marketing, content creation, and targeted advertising services in Kenya.',
+    url: '/services/digital-marketing'
   },
   twitter: {
-    title: 'Social Media Management | Interconnect Kenya',
-    description: 'Amplify your brand online with Interconnect\'s comprehensive social media services. Let\'s grow your audience!'
+    title: 'Digital Marketing | Interconnect Kenya',
+    description: 'Amplify your brand online with Interconnect\'s comprehensive digital marketing services. Let\'s grow your audience!'
   },
   alternates: {
-    canonical: '/services/social-media',
+    canonical: '/services/digital-marketing',
   },
 };
 
 const features = [
   {
     icon: UsersIcon,
-    title: 'Platform Management',
-    description: 'Expert handling of your social media profiles across relevant platforms, ensuring consistent brand voice and engagement.',
+    title: 'Digital Platform Management',
+    description: 'Expert handling of your digital marketing campaigns across relevant platforms, ensuring consistent brand voice and engagement.',
   },
   {
     icon: Edit3Icon,
@@ -43,7 +43,7 @@ const features = [
   {
     icon: TrendingUpIcon,
     title: 'Strategy & Analytics',
-    description: 'Data-driven strategies and insightful analytics to optimize performance and maximize your social media ROI.',
+    description: 'Data-driven strategies and insightful analytics to optimize performance and maximize your digital marketing ROI.',
   },
   {
     icon: MegaphoneIcon,
@@ -52,7 +52,7 @@ const features = [
   },
 ];
 
-const SocialMediaPage = () => {
+const DigitalMarketingPage = () => {
   return (
     <div className="relative min-h-screen text-foreground overflow-hidden">
       {/* Background Gradient Layer */}
@@ -61,21 +61,21 @@ const SocialMediaPage = () => {
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-4 py-12 text-center">
         <h1 className="text-5xl md:text-7xl font-bold pb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 animate-gradient-x">
-          Amplify Your Brand on Social Media
+          Amplify Your Brand with Digital Marketing
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-          Engage your audience, build community, and drive growth with our expert social media management and content creation services. We handle everything, so you can focus on your business.
+          Engage your audience, build community, and drive growth with our expert digital marketing and content creation services. We handle everything, so you can focus on your business.
         </p>
         <Link href="/contact">
           <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white hover:from-cyan-700 hover:to-blue-700 group transform hover:scale-105 transition duration-300 shadow-lg shadow-blue-500/25">
-            Boost Your Social Presence <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            Boost Your Digital Presence <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
         </Link>
       </section>
 
       {/* Features Section */}
       <section className="relative z-10 px-4 sm:px-6 lg:px-12 xl:px-24 pt-8 pb-16">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-cyan-200">Our Social Media Services</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-cyan-200">Our Digital Marketing Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {features.map((feature, index) => (
             <div
@@ -99,9 +99,9 @@ const SocialMediaPage = () => {
       {/* Call to Action Section */}
       <section className="relative z-10 bg-gradient-to-r from-cyan-800/70 to-blue-800/50 py-20 mt-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-cyan-100 mb-4">Ready to Dominate Social Media?</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold text-cyan-100 mb-4">Ready to Dominate Digital Marketing?</h2>
           <p className="text-lg text-blue-200/90 max-w-2xl mx-auto mb-8">
-            Let's craft a winning social media strategy that elevates your brand and connects with your audience.
+            Let&#39;s craft a winning digital marketing strategy that elevates your brand and connects with your audience.
           </p>
           <Link href="/contact">
             <Button size="lg" className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white hover:from-cyan-700 hover:to-blue-700 group transform hover:scale-105 transition duration-300 shadow-lg shadow-blue-500/25">
@@ -114,4 +114,4 @@ const SocialMediaPage = () => {
   );
 };
 
-export default SocialMediaPage;
+export default DigitalMarketingPage;
