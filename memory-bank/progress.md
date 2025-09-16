@@ -10,7 +10,7 @@ The project is currently in early development, with the basic structure and home
 - Home page with hero section, services overview, and call-to-action
 - Individual service pages (initial versions)
 - About page content structure
-- Contact page with form (basic functionality)
+- Contact page redesigned with two-column layout, dark theme cards, and functional Web3Forms submission (direct key in code)
 - Core Memory Bank files established
 - **404 Not Found page implemented**
 
@@ -33,7 +33,7 @@ The project is currently in early development, with the basic structure and home
 
 ## Known Issues
 
-- Contact form is not yet functional (no backend).
+- Contact form currently relies on Web3Forms (no custom backend/CRM yet).
 - Some placeholder text may still exist.
 - Performance hasn't been specifically optimized yet.
 - Factual accuracy of the 'Our Story' section was corrected (previously mentioned meeting 'in the same city', now corrected to 'Cardiff').

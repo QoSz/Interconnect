@@ -1,61 +1,260 @@
 "use client";
 
-import { Mail, Phone } from 'lucide-react';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function Contact() {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        try {
+            const form = event.target as HTMLFormElement;
+            const formData = new FormData(form);
+
+            // Web3Forms access key
+            formData.append('access_key', 'fb8b7e8b-39ec-4f4e-b7fe-68eac723cfc4');
+
+            // Optional: combine names for services that expect a single name field
+            const firstName = (formData.get('firstName') as string) || '';
+            const lastName = (formData.get('lastName') as string) || '';
+            if (!formData.get('name')) {
+                formData.append('name', `${firstName} ${lastName}`.trim());
+            }
+
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: json,
+            });
+
+            const result = await response.json();
+
+            if (result?.success) {
+                setSubmitStatus('success');
+                form.reset();
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    }
+
     return (
-        <div className="min-h-[80vh] relative flex flex-col items-center justify-center text-gray-100 px-4 py-12 sm:py-16">
+        <main className="relative min-h-[80vh] text-gray-100">
+            {/* Subtle branded gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/15 to-transparent pointer-events-none" />
-            
-            {/* Decorative elements similar to Hero */}
+
+            {/* Decorative blobs (brand-consistent) */}
             <div className="absolute top-1/4 left-[10%] w-32 h-32 sm:w-48 sm:h-48 rounded-full bg-blue-600/10 blur-3xl animate-pulse" style={{ animationDelay: '0s' }} />
             <div className="absolute bottom-1/4 right-[10%] w-40 h-40 sm:w-56 sm:h-56 rounded-full bg-indigo-600/10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
-            <div className="z-10 max-w-md sm:max-w-2xl w-full text-center bg-gray-800/50 backdrop-blur-md p-6 sm:p-8 rounded-[1.618rem] shadow-xl border border-purple-500/30">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-purple-200 mb-4 sm:mb-6">
-                    Contact Us
-                </h1>
-                <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8">
-                    We&#39;d love to hear from you! Reach out through any of the channels below.
-                </p>
+            {/* Hero Section */}
+            <section className="relative pt-8 sm:pt-12 md:pt-16 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto text-center">
+                    <h1 className="text-3xl md:text-4xl font-bold text-purple-200 mb-3 sm:mb-4">
+                        Get in touch with{' '}
+                        <span className="bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">Interconnect</span>
+                    </h1>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-2">
+                        We&apos;d love to hear from you. Fill out the form or reach out directly.
+                    </p>
+                </div>
+            </section>
 
-                <div className="space-y-4 sm:space-y-6">
-                    {/* Email Section */}
-                    <div className="flex items-center justify-center space-x-2 sm:space-x-3 group">
-                        <Mail className="w-5 h-5 flex-shrink-0 text-purple-400 group-hover:text-blue-400 transition-colors duration-200" />
-                        <a 
-                            href="mailto:info@interconnect.co.ke" 
-                            className="text-lg sm:text-xl text-gray-200 font-medium transition hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent"
-                        >
-                            info@interconnect.co.ke
-                        </a>
-                    </div>
+            {/* Contact Section */}
+            <section className="relative pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+                        {/* Contact Information */}
+                        <div className="md:col-span-1 lg:col-span-1 space-y-4 sm:space-y-6">
+                            {/* Email */}
+                            <div className="bg-gray-800/50 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-xl border border-purple-500/20">
+                                <div className="flex items-center">
+                                    <div className="p-2 sm:p-3 rounded-xl bg-gradient-to-br from-purple-600/10 to-indigo-600/10 flex-shrink-0">
+                                        <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-purple-400" />
+                                    </div>
+                                    <div className="ml-3 sm:ml-4 min-w-0">
+                                        <h3 className="text-lg sm:text-xl font-bold text-purple-200 mb-1 sm:mb-1.5">Email</h3>
+                                        <p className="text-sm sm:text-base text-gray-300 break-all">
+                                            <a href="mailto:info@interconnect.co.ke" className="hover:underline">info@interconnect.co.ke</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-                    {/* Phone Section */}
-                    <div className="flex flex-col items-center space-y-2 sm:space-y-3">
-                         <div className="flex items-center justify-center space-x-2 sm:space-x-3 group">
-                             <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 group-hover:text-blue-400 transition-colors duration-200" />
-                             <a 
-                                 href="tel:+254788871946" 
-                                 className="text-lg sm:text-xl text-gray-200 font-medium transition hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent"
-                             >
-                                 +254 788 871 946
-                             </a>
-                         </div>
-                         <div className="flex items-center justify-center space-x-2 sm:space-x-3 group">
-                             <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 group-hover:text-blue-400 transition-colors duration-200" />
-                             <a 
-                                 href="tel:+447586752568" 
-                                 className="text-lg sm:text-xl text-gray-200 font-medium transition hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent"
-                             >
-                                 +44 7586 752 568
-                             </a>
-                         </div>
+                            {/* Phone (Kenya) */}
+                            <div className="bg-gray-800/50 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-xl border border-purple-500/20">
+                                <div className="flex items-center">
+                                    <div className="p-2 sm:p-3 rounded-xl bg-gradient-to-br from-purple-600/10 to-indigo-600/10 flex-shrink-0">
+                                        <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-purple-400" />
+                                    </div>
+                                    <div className="ml-3 sm:ml-4 min-w-0">
+                                        <h3 className="text-lg sm:text-xl font-bold text-purple-200 mb-1 sm:mb-1.5">Phone</h3>
+                                        <p className="text-sm sm:text-base text-gray-300">
+                                            <a href="tel:+254788871946" className="hover:underline">+254 788 871 946</a>
+                                        </p>
+                                        <p className="text-sm sm:text-base text-gray-300">
+                                            <a href="tel:+447586752568" className="hover:underline">+44 7586 752 568</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Address */}
+                            <div className="bg-gray-800/50 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-xl border border-purple-500/20">
+                                <div className="flex items-start">
+                                    <div className="p-2 sm:p-3 rounded-xl bg-gradient-to-br from-purple-600/10 to-indigo-600/10 flex-shrink-0">
+                                        <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-purple-400" />
+                                    </div>
+                                    <div className="ml-3 sm:ml-4 min-w-0">
+                                        <h3 className="text-lg sm:text-xl font-bold text-purple-200 mb-1 sm:mb-1.5">Address</h3>
+                                        <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                                            Nairobi, Kenya
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Contact Form */}
+                        <div className="md:col-span-1 lg:col-span-2">
+                            <div className="bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-xl border border-purple-500/20">
+                                <h2 className="text-xl sm:text-2xl font-bold text-purple-200 mb-4 sm:mb-6">Send us a message</h2>
+
+                                {submitStatus === 'success' && (
+                                    <div className="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-xl flex items-center" role="status" aria-live="polite">
+                                        <CheckCircle className="h-5 w-5 text-green-400 mr-3" />
+                                        <p className="text-green-200">Thank you! Your message has been sent successfully.</p>
+                                    </div>
+                                )}
+
+                                {submitStatus === 'error' && (
+                                    <div className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center" role="alert" aria-live="assertive">
+                                        <AlertCircle className="h-5 w-5 text-red-400 mr-3" />
+                                        <p className="text-red-200">Something went wrong. Please try again.</p>
+                                    </div>
+                                )}
+
+                                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                                    {/* Name Fields */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                                        <div>
+                                            <label htmlFor="firstName" className="block text-sm font-semibold text-gray-200 mb-2">
+                                                First Name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="firstName"
+                                                name="firstName"
+                                                required
+                                                className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border border-gray-600/60 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 placeholder:text-gray-500 text-gray-100"
+                                                placeholder="First Name"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="lastName" className="block text-sm font-semibold text-gray-200 mb-2">
+                                                Last Name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="lastName"
+                                                name="lastName"
+                                                required
+                                                className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border border-gray-600/60 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 placeholder:text-gray-500 text-gray-100"
+                                                placeholder="Last Name"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Email */}
+                                    <div>
+                                        <label htmlFor="email" className="block text-sm font-semibold text-gray-200 mb-2">
+                                            Email Address <span className="text-red-400">*</span>
+                                        </label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            required
+                                            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border border-gray-600/60 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 placeholder:text-gray-500 text-gray-100"
+                                            placeholder="your@email.com"
+                                        />
+                                    </div>
+
+                                    {/* Subject */}
+                                    <div>
+                                        <label htmlFor="subject" className="block text-sm font-semibold text-gray-200 mb-2">
+                                            Subject
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="subject"
+                                            name="subject"
+                                            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border border-gray-600/60 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 placeholder:text-gray-500 text-gray-100"
+                                            placeholder="How can we help you?"
+                                        />
+                                    </div>
+
+                                    {/* Message */}
+                                    <div>
+                                        <label htmlFor="message" className="block text-sm font-semibold text-gray-200 mb-2">
+                                            Your Message <span className="text-red-400">*</span>
+                                        </label>
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            rows={5}
+                                            required
+                                            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border border-gray-600/60 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 placeholder:text-gray-500 text-gray-100 resize-none"
+                                            placeholder="Tell us about your project or how we can help..."
+                                        />
+                                    </div>
+
+                                    {/* Submit Button */}
+                                    <div>
+                                        <Button
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold transition-all duration-300 hover:brightness-110 hover:scale-[1.02] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                                        >
+                                            {isSubmitting ? (
+                                                <>
+                                                    <span className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-2" />
+                                                    Sending...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Send className="mr-2 h-5 w-5" />
+                                                    Send Message
+                                                </>
+                                            )}
+                                        </Button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-             {/* Add inline CSS for animations if needed, or ensure Tailwind config handles it */}
-             <style jsx>{`
+            </section>
+
+            {/* Local animation keyframes for blobs */}
+            <style jsx>{`
                 @keyframes pulse {
                     0%, 100% { opacity: 0.6; transform: scale(1); }
                     50% { opacity: 0.3; transform: scale(1.05); }
@@ -64,6 +263,6 @@ export default function Contact() {
                     animation: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
                 }
             `}</style>
-        </div>
+        </main>
     );
 }

@@ -11,6 +11,7 @@ The project is in active development, with the initial website structure and key
 - Established basic navigation structure
 - Corrected the 'Our Story' section on the About page to specify that the founders met in Cardiff
 - Implemented the 404 Not Found page
+ - Redesigned Contact page to match brand (purple/indigo) with two-column layout, info cards, and Web3Forms integration (client-side). Uses `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`.
 
 ## Active Decisions
 
@@ -25,6 +26,7 @@ The project is in active development, with the initial website structure and key
 - Leveraging server components for static content where possible
 - Implementing component-based architecture for maintainability
 - Using TailwindCSS for styling to ensure consistency and efficiency
+ - Contact form posts to Web3Forms over HTTPS using JSON; success/error banners displayed
 
 ### Content Strategy
 - Direct, clear communication of services offered
@@ -42,7 +44,7 @@ The project is in active development, with the initial website structure and key
 
 ### Immediate Priorities (Short-term)
 1. Complete all primary service pages with detailed information
-2. Implement contact form functionality (connecting to backend)
+2. Implement contact form functionality (optional backend relay or service integration)
 3. Enhance mobile responsiveness across all pages
 4. Add proper meta tags for SEO optimization
 5. Polish overall design and animations
@@ -63,5 +65,5 @@ The project is in active development, with the initial website structure and key
 - Should a blog/resources section be added in the initial release?
 - What specific metrics should be tracked for measuring success?
 - Is there a need for user accounts or client login functionality?
-- Should the contact form connect to a CRM system?
+- Should the contact form connect to a CRM system? If yes, choose service and map fields.
 - Is the 'Our Story' section on the About page accurate? 
