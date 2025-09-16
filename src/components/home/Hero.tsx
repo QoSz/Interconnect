@@ -13,11 +13,11 @@ export default function Hero() {
     
     const messages = useMemo(() => [
         "Interconnect: Your connection to the digital world...",
-        "Websites that don&#39;t just exist, they engage.",
-        "Amplify your brand, dominate digital marketing.",
-        "Secure your connections, protect your future.",
-        "Strategic IT insights for exponential growth.",
-        "Let&#39;s build something amazing, together."
+        "Websites that don't just exist, they engage.",
+        "Transform your business with AI automation.",
+        "Amplify your brand with strategic digital marketing.",
+        "Expert IT consulting for scalable growth.",
+        "Let's build something amazing, together."
     ], []);
     
     const handleTyping = useCallback(() => {
