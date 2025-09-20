@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRightIcon, BriefcaseIcon, LightbulbIcon, TrendingUpIcon, SettingsIcon } from 'lucide-react';
+import { ArrowRightIcon, BriefcaseIcon, LightbulbIcon, TrendingUpIcon, SettingsIcon, CheckIcon, GiftIcon, UserCheckIcon } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Strategic IT Consulting Services',
@@ -52,6 +52,63 @@ const features = [
   }
 ];
 
+const consultingPackages = [
+  {
+    name: 'Discovery Session',
+    icon: GiftIcon,
+    price: 'Free',
+    currency: '',
+    period: '',
+    description: 'Get started with a comprehensive assessment',
+    features: [
+      '1-hour initial consultation',
+      'Business needs assessment',
+      'Current technology audit',
+      'Preliminary recommendations',
+      'Technology gap analysis',
+      'Security assessment overview',
+      'Process optimization opportunities',
+      'No obligation follow-up'
+    ],
+    popular: true,
+    ctaText: 'Book Free Session',
+    maintenance: null,
+    benefits: [
+      'Identify immediate technology improvements',
+      'Understand your current IT infrastructure',
+      'Get professional recommendations',
+      'Plan your technology roadmap'
+    ]
+  },
+  {
+    name: 'Strategic Partnership',
+    icon: UserCheckIcon,
+    price: '2,000',
+    currency: 'KSH',
+    period: '/session',
+    description: 'Ongoing guidance for technology success',
+    features: [
+      'Follow-up consultation sessions',
+      'Detailed implementation planning',
+      'Technology roadmap development',
+      'Vendor selection guidance',
+      'Process optimization recommendations',
+      'Priority email/call support between sessions',
+      'Custom solution architecture',
+      'Quarterly technology reviews'
+    ],
+    popular: false,
+    ctaText: 'Continue Partnership',
+    maintenance: 'Flexible scheduling as needed',
+    benefits: [
+      'Long-term technology strategy',
+      'Ongoing support and guidance',
+      'Cost-effective expert advice',
+      'Accelerated implementation success'
+    ]
+  }
+];
+
 export default function ITConsultingPage() {
   return (
     <div className="relative min-h-screen text-foreground overflow-hidden">
@@ -93,6 +150,129 @@ export default function ITConsultingPage() {
               <p className="text-gray-400 leading-relaxed flex-grow">{feature.description}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Consulting Packages Section */}
+      <section className="relative z-10 px-4 sm:px-6 lg:px-12 xl:px-24 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-semibold text-amber-200 mb-4">IT Consulting Packages</h2>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            Start with a free consultation to understand your needs, then continue with ongoing strategic guidance.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+          {consultingPackages.map((pkg, index) => (
+            <div
+              key={index}
+              className={`relative bg-gray-900/50 border ${pkg.popular ? 'border-amber-500/70 ring-2 ring-amber-500/50' : 'border-yellow-900/50'} p-8 rounded-2xl backdrop-blur-sm hover:bg-gray-800/60 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/20 min-h-[600px] flex flex-col`}
+            >
+              {pkg.popular && (
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-gradient-to-r from-amber-600 to-yellow-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    Start Here
+                  </span>
+                </div>
+              )}
+
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mr-4 border border-amber-700/50 shadow-md shadow-amber-600/20 flex-shrink-0">
+                  <pkg.icon className="h-8 w-8 text-yellow-400" />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-2xl font-semibold text-amber-100">{pkg.name}</h3>
+                  <p className="text-sm text-gray-400">{pkg.description}</p>
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <div className="flex items-baseline">
+                  <span className="text-4xl font-bold text-white">{pkg.price}</span>
+                  {pkg.currency && <span className="text-lg text-amber-300 ml-1">{pkg.currency}</span>}
+                  {pkg.period && <span className="text-sm text-gray-400 ml-1">{pkg.period}</span>}
+                </div>
+                {pkg.maintenance && (
+                  <p className="text-sm text-orange-400 mt-1">{pkg.maintenance}</p>
+                )}
+              </div>
+
+              <div className="flex-grow">
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-amber-200 mb-3">What You Get:</h4>
+                  <ul className="space-y-3">
+                    {pkg.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start text-sm text-gray-300">
+                        <CheckIcon className="h-4 w-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-amber-200 mb-3">Key Benefits:</h4>
+                  <ul className="space-y-2">
+                    {pkg.benefits.map((benefit, benefitIndex) => (
+                      <li key={benefitIndex} className="flex items-start text-sm text-gray-300">
+                        <TrendingUpIcon className="h-4 w-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-auto">
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    className={`w-full ${pkg.popular
+                      ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white hover:from-amber-700 hover:to-yellow-700'
+                      : 'bg-gray-800 text-amber-100 hover:bg-gray-700 border border-amber-700/50'
+                    } transition duration-300 shadow-lg text-lg py-3`}
+                  >
+                    {pkg.ctaText}
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Value Proposition Section */}
+        <div className="bg-gradient-to-r from-amber-900/30 to-yellow-900/30 border border-amber-700/50 rounded-2xl p-8 backdrop-blur-sm">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-semibold text-amber-100 mb-4">Why Choose Our IT Consulting?</h3>
+            <p className="text-gray-300 max-w-3xl mx-auto">
+              Our consulting approach focuses on practical, actionable solutions that drive real business results.
+              We understand the unique challenges facing modern businesses and provide technology guidance that works.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-600 to-yellow-600 flex items-center justify-center mx-auto mb-4">
+                <BriefcaseIcon className="h-6 w-6 text-white" />
+              </div>
+              <h4 className="text-lg font-semibold text-amber-100 mb-2">Market Understanding</h4>
+              <p className="text-sm text-gray-400">Deep understanding of diverse business environments and global technology landscapes</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-600 to-yellow-600 flex items-center justify-center mx-auto mb-4">
+                <LightbulbIcon className="h-6 w-6 text-white" />
+              </div>
+              <h4 className="text-lg font-semibold text-amber-100 mb-2">Practical Solutions</h4>
+              <p className="text-sm text-gray-400">Technology recommendations that are realistic, cost-effective, and implementable</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-600 to-yellow-600 flex items-center justify-center mx-auto mb-4">
+                <TrendingUpIcon className="h-6 w-6 text-white" />
+              </div>
+              <h4 className="text-lg font-semibold text-amber-100 mb-2">Growth Focused</h4>
+              <p className="text-sm text-gray-400">Strategic guidance that positions your business for sustainable growth and success</p>
+            </div>
+          </div>
         </div>
       </section>
 
