@@ -213,16 +213,6 @@ const DigitalMarketingPage = () => {
                 </div>
               </div>
 
-              <div className="mb-6">
-                <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-white">{plan.price}</span>
-                  <span className="text-lg text-cyan-300 ml-1">{plan.currency}</span>
-                  {plan.period && <span className="text-sm text-gray-400 ml-1">{plan.period}</span>}
-                </div>
-                {plan.maintenance && (
-                  <p className="text-sm text-orange-400 mt-1">{plan.maintenance}</p>
-                )}
-              </div>
 
               <div className="flex-grow">
                 <ul className="space-y-3 mb-6">

@@ -11,8 +11,12 @@ import {
   Phone,
   ChevronDown,
   Home,
-  CircleHelp
+  CircleHelp,
+  Sun,
+  Moon
 } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -45,6 +49,17 @@ const mainLinks = [
 ];
 
 export default function Navigation() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <>
       <style jsx global>{`
@@ -133,10 +148,40 @@ export default function Navigation() {
                 <span>{link.label}</span>
               </Link>
             ))}
+
+            {/* Theme Toggle */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 transition-all duration-200"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+              <span className="sr-only">Toggle theme</span>
+            </Button>
           </nav>
 
           {/* Mobile Navigation */}
-          <div className="flex md:hidden">
+          <div className="flex md:hidden items-center space-x-2">
+            {/* Mobile Theme Toggle */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 transition-all duration-200"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="text-gray-300">

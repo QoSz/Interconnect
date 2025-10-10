@@ -95,7 +95,7 @@ const pricingPlans = [
     ],
     popular: true,
     ctaText: 'Most Popular',
-    maintenance: '5,000 KSH/month maintenance'
+    maintenance: 'Monthly maintenance included'
   },
   {
     name: 'E-Commerce',
@@ -220,16 +220,6 @@ export default function WebsitesPage() {
                 </div>
               </div>
 
-              <div className="mb-6">
-                <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-white">{plan.price}</span>
-                  <span className="text-lg text-purple-300 ml-1">{plan.currency}</span>
-                </div>
-                {plan.maintenance && (
-                  <p className="text-sm text-orange-400 mt-1">{plan.maintenance}</p>
-                )}
-              </div>
-
               <div className="flex-grow">
                 <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, featureIndex) => (
@@ -271,7 +261,6 @@ export default function WebsitesPage() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div>
-                  <p className="text-purple-300 font-medium">Starting from 10,000 KSH/month</p>
                   <p className="text-gray-400">Usage-based pricing</p>
                 </div>
                 <div>

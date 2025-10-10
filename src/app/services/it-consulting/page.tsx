@@ -186,16 +186,6 @@ export default function ITConsultingPage() {
                 </div>
               </div>
 
-              <div className="mb-6">
-                <div className="flex items-baseline">
-                  <span className="text-4xl font-bold text-white">{pkg.price}</span>
-                  {pkg.currency && <span className="text-lg text-amber-300 ml-1">{pkg.currency}</span>}
-                  {pkg.period && <span className="text-sm text-gray-400 ml-1">{pkg.period}</span>}
-                </div>
-                {pkg.maintenance && (
-                  <p className="text-sm text-orange-400 mt-1">{pkg.maintenance}</p>
-                )}
-              </div>
 
               <div className="flex-grow">
                 <div className="mb-6">

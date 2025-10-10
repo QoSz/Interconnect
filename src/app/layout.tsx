@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/shared/Navigation";
 import Footer from "@/components/shared/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 const siteUrl = "https://www.interconnect.co.ke";
 
@@ -70,11 +71,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased min-h-screen flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white`}>
-        <Navigation />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navigation />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
