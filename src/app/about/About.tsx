@@ -17,6 +17,13 @@ const teamMembers = [
     description: "Nirav brings strategic vision and a client-focused approach to Interconnect. He excels at understanding business needs and translating them into impactful digital strategies that drive growth.",
     linkedin: "https://www.linkedin.com/in/niravchalla/",
   },
+    {
+    id: 3,
+    name: "Dhruv Patel",
+    title: "Technical Director",
+    description: "Dhruv is a skilled web developer and technology lead who guides Interconnect technical direction. Focused on creating efficient, scalable, and user-centered digital solutions that drive real results.",
+    linkedin: "https://www.linkedin.com/in/dhruv-patel-a40ba5222/",
+  },
 ];
 
 export default function About() {
@@ -39,7 +46,7 @@ export default function About() {
         </div>
 
         {/* Team Members Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
           {teamMembers.map((member) => (
             <div
               key={member.id}

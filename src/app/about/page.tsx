@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     'Interconnect team',
     'Yash Shah',
     'Nirav Challa',
+    'Dhruv Patel',
     'digital solutions Kenya founders',
     'our mission',
     'company values',
@@ -18,12 +19,12 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'About Interconnect - Our Team and Mission',
-    description: 'Discover the dedicated team, Yash Shah and Nirav Challa, and the core values that drive Interconnect. We are passionate about delivering exceptional digital solutions.',
+    description: 'Discover the dedicated team, Yash Shah, Nirav Challa and Dhruv Patel, and the core values that drive Interconnect. We are passionate about delivering exceptional digital solutions.',
     url: '/about', // Resolves to https://www.interconnect.co.ke/about
   },
   twitter: {
     title: 'Meet the Team Behind Interconnect',
-    description: 'Learn about Yash Shah and Nirav Challa, the founders of Interconnect, and their vision for digital excellence in Kenya.'
+    description: 'Learn about Yash Shah, Nirav Challa and Dhruv Patel, the founders of Interconnect, and their vision for digital excellence in Kenya.'
   },
   alternates: {
     canonical: '/about',
