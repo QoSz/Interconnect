@@ -34,8 +34,8 @@ const services = [
         href: '/services/websites',
         icon: Globe,
         bgColor: 'bg-blue-600/10',
-        hoverBgColor: 'hover:bg-purple-600/20',
-        borderColor: 'hover:border-purple-500'
+        hoverBgColor: 'hover:bg-blue-600/20',
+        borderColor: 'hover:border-blue-500'
     },
     {
         name: 'Digital Marketing',
@@ -43,9 +43,8 @@ const services = [
         href: '/services/digital-marketing',
         icon: Users,
         bgColor: 'bg-purple-600/10',
-
-        hoverBgColor: 'hover:bg-blue-600/20',
-        borderColor: 'hover:border-blue-500'
+        hoverBgColor: 'hover:bg-purple-600/20',
+        borderColor: 'hover:border-purple-500'
     },
     {
         name: 'AI Automation',
@@ -69,14 +68,14 @@ const services = [
 
 export default function Services() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-gray-100 py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black py-16 sm:py-24 px-4 sm:px-6 lg:px-8 dark:from-gray-900 dark:to-black" style={{ background: `linear-gradient(to bottom, var(--services-section-bg-start), var(--services-section-bg-end))` }}>
             <div className="max-w-7xl mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-16 sm:mb-20">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500 mb-4">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700 dark:from-purple-400 dark:to-indigo-500 mb-4">
                         Our Services
                     </h1>
-                    <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+                    <p className="text-lg sm:text-xl text-[var(--services-text)] max-w-3xl mx-auto">
                         We provide a comprehensive suite of digital solutions designed to elevate your business. Explore how we can help you succeed.
                     </p>
                 </div>
@@ -101,10 +100,10 @@ export default function Services() {
                                     <div className="mb-4 inline-flex items-center justify-center p-3 rounded-lg bg-gradient-to-br from-purple-600 to-indigo-700 text-white shadow-md">
                                         <service.icon className="h-6 w-6" aria-hidden="true" />
                                     </div>
-                                    <h3 className="text-xl font-semibold text-gray-100 mb-2">{service.name}</h3>
-                                    <p className="text-gray-400 text-sm">{service.description}</p>
+                                    <h3 className="text-xl font-semibold text-[var(--services-card-title)] mb-2">{service.name}</h3>
+                                    <p className="text-[var(--services-card-description)] text-sm">{service.description}</p>
                                 </div>
-                                <span className="relative z-10 mt-auto pt-2 text-right text-gray-500 group-hover:text-purple-400 transition-colors duration-300">
+                                <span className="relative z-10 mt-auto pt-2 text-right text-[var(--services-learn-more)] group-hover:text-[var(--services-learn-more-hover)] transition-colors duration-300">
                                     Learn More &rarr;
                                 </span>
                             </div>

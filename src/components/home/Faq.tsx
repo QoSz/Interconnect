@@ -2,17 +2,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 export default function Faq() {
     return (
-        <section id="faq" className="py-16 px-4 md:px-8 relative bg-gradient-to-br from-[#0a0a0a] to-[#121212]">
+        <section id="faq" className="py-16 px-4 md:px-8 relative" style={{ background: `linear-gradient(to bottom right, var(--faq-section-bg-start), var(--faq-section-bg-end))` }}>
             {/* Background elements matching other sections */}
-            <div className="absolute top-1/3 left-1/5 w-32 h-32 md:w-48 md:h-48 rounded-full bg-indigo-600/10 blur-3xl" 
-                 style={{ animation: 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite' }} />
-            <div className="absolute bottom-1/4 right-1/5 w-36 h-36 md:w-56 md:h-56 rounded-full bg-purple-600/10 blur-3xl" 
-                 style={{ animation: 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite', animationDelay: '1s' }} />
+            <div className="absolute top-1/3 left-1/5 w-32 h-32 md:w-48 md:h-48 rounded-full blur-3xl"
+                 style={{ animation: 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite', backgroundColor: 'var(--faq-blur-1)' }} />
+            <div className="absolute bottom-1/4 right-1/5 w-36 h-36 md:w-56 md:h-56 rounded-full blur-3xl"
+                 style={{ animation: 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite', animationDelay: '1s', backgroundColor: 'var(--faq-blur-2)' }} />
             
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-purple-200 mb-4">Frequently Asked Questions</h2>
-                    <p className="text-gray-300 max-w-2xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[var(--faq-heading)] mb-4">Frequently Asked Questions</h2>
+                    <p className="text-[var(--faq-text)] max-w-2xl mx-auto">
                         Everything you need to know about our services
                     </p>
                 </div>
@@ -46,10 +46,10 @@ export default function Faq() {
                             }
                         ].map((item, index) => (
                             <AccordionItem key={index} value={`item-${index}`}>
-                                <AccordionTrigger className="text-left font-semibold text-purple-100 hover:text-purple-300">
+                                <AccordionTrigger className="text-left font-semibold text-[var(--faq-trigger-text)] hover:text-[var(--faq-trigger-hover)]">
                                     {item.question}
                                 </AccordionTrigger>
-                                <AccordionContent className="text-gray-400 text-base">
+                                <AccordionContent className="text-[var(--faq-content-text)] text-base">
                                     {item.answer}
                                 </AccordionContent>
                             </AccordionItem>

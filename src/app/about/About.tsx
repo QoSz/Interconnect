@@ -28,19 +28,25 @@ const teamMembers = [
 
 export default function About() {
   return (
-    <div className="relative min-h-screen text-gray-100 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="relative min-h-screen text-slate-900 dark:text-gray-100 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Gradient & Decorative Elements */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-gray-900 via-gray-950 to-black" />
-      <div className="absolute top-1/4 left-[5%] w-48 h-48 sm:w-72 sm:h-72 rounded-full bg-purple-600/10 blur-3xl animate-pulse -z-10" style={{ animationDelay: '0s' }} />
-      <div className="absolute bottom-1/4 right-[5%] w-56 h-56 sm:w-80 sm:h-80 rounded-full bg-indigo-600/10 blur-3xl animate-pulse -z-10" style={{ animationDelay: '1s' }} />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white via-violet-50 to-purple-100 dark:from-gray-900 dark:via-gray-950 dark:to-black" />
+      <div
+        className="absolute top-1/4 left-[5%] w-48 h-48 sm:w-72 sm:h-72 rounded-full bg-purple-300/30 dark:bg-purple-600/10 blur-3xl animate-pulse -z-10"
+        style={{ animationDelay: '0s' }}
+      />
+      <div
+        className="absolute bottom-1/4 right-[5%] w-56 h-56 sm:w-80 sm:h-80 rounded-full bg-indigo-300/30 dark:bg-indigo-600/10 blur-3xl animate-pulse -z-10"
+        style={{ animationDelay: '1s' }}
+      />
 
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16 sm:mb-20">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-pink-500 dark:from-purple-400 dark:via-indigo-400 dark:to-pink-400 mb-4">
             Meet Our Team
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-600 dark:text-gray-400 max-w-3xl mx-auto">
             We are a passionate duo dedicated to bringing your digital visions to life. Get to know the minds behind Interconnect.
           </p>
         </div>
@@ -50,23 +56,23 @@ export default function About() {
           {teamMembers.map((member) => (
             <div
               key={member.id}
-              className="bg-gray-800/50 backdrop-blur-md border border-purple-700/30 rounded-[1.618rem] p-6 sm:p-8 shadow-xl hover:shadow-purple-500/40 transition-all duration-300 transform hover:-translate-y-1.5 flex flex-col items-center text-center"
+              className="bg-white/80 dark:bg-gray-800/50 backdrop-blur-md border border-purple-200/60 dark:border-purple-700/30 rounded-[1.618rem] p-6 sm:p-8 shadow-xl shadow-purple-200/30 dark:shadow-purple-900/30 hover:shadow-purple-300/60 dark:hover:shadow-purple-500/40 transition-all duration-300 transform hover:-translate-y-1.5 flex flex-col items-center text-center"
             >
               {/* Profile Placeholder */}
-              <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-gradient-to-br from-purple-600/30 to-indigo-600/30 border-2 border-purple-500/50 flex items-center justify-center mb-6 shadow-lg">
-                <User className="w-16 h-16 sm:w-20 sm:h-20 text-purple-300/80" />
+              <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-gradient-to-br from-purple-300/30 to-indigo-300/30 dark:from-purple-600/30 dark:to-indigo-600/30 border-2 border-purple-400/50 dark:border-purple-500/50 flex items-center justify-center mb-6 shadow-lg shadow-purple-200/40 dark:shadow-purple-900/40">
+                <User className="w-16 h-16 sm:w-20 sm:h-20 text-purple-500/80 dark:text-purple-300/80" />
               </div>
 
               {/* Name */}
-              <h3 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-300 mb-1">
+              <h3 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-300 dark:to-indigo-300 mb-1">
                 {member.name}
               </h3>
               {/* Title */}
-              <p className="text-sm text-indigo-400 mb-4 font-medium tracking-wide">
+              <p className="text-sm text-indigo-600 dark:text-indigo-400 mb-4 font-medium tracking-wide">
                 {member.title}
               </p>
               {/* Description */}
-              <p className="text-gray-300/90 text-base leading-relaxed mb-6">
+              <p className="text-slate-600 dark:text-gray-300/90 text-base leading-relaxed mb-6">
                 {member.description}
               </p>
               
@@ -75,9 +81,9 @@ export default function About() {
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-400/40 border border-blue-400/20 hover:border-blue-300/40"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-200/60 dark:shadow-indigo-500/25 hover:shadow-purple-300/80 dark:hover:shadow-indigo-400/40 border border-purple-200/40 dark:border-blue-400/20 hover:border-purple-300/60 dark:hover:border-blue-300/40"
               >
-                <Linkedin className="w-5 h-5 text-blue-200" />
+                <Linkedin className="w-5 h-5 text-blue-100 dark:text-blue-200" />
                 Connect on LinkedIn
               </a>
             </div>

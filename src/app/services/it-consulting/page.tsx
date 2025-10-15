@@ -111,16 +111,23 @@ const consultingPackages = [
 
 export default function ITConsultingPage() {
   return (
-    <div className="relative min-h-screen text-foreground overflow-hidden">
-      {/* Background Gradient Layer */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-yellow-900/10 to-transparent -z-10" />
+    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
+      {/* Background Gradient Layers */}
+      <div className="absolute inset-0 -z-20 block dark:hidden bg-[radial-gradient(circle_at_top,_rgba(253,224,71,0.4),_transparent_62%)]" />
+      <div className="absolute inset-0 -z-20 hidden dark:block bg-[radial-gradient(circle_at_top,_rgba(120,53,15,0.6),_transparent_70%)]" />
+      <div className="absolute inset-0 -z-10">
+        <div className="h-full w-full bg-gradient-to-b from-transparent via-[var(--it-page-bg-overlay)] to-transparent dark:via-yellow-900/10" />
+      </div>
 
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-4 py-12 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold pb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-300 animate-gradient-x">
+        <h1
+          className="text-5xl md:text-7xl font-bold pb-4 bg-clip-text text-transparent animate-gradient-x"
+          style={{ backgroundImage: 'linear-gradient(to right, var(--it-hero-heading-from), var(--it-hero-heading-via), var(--it-hero-heading-to))' }}
+        >
           Strategic IT Consulting for Growth
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+        <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-[var(--it-hero-text)] dark:text-muted-foreground">
           Navigate the complexities of technology with expert guidance. We provide actionable IT insights and strategies to optimize your operations, drive innovation, and accelerate business growth.
         </p>
         <Link href="/contact">
@@ -132,22 +139,32 @@ export default function ITConsultingPage() {
 
       {/* Features Section */}
       <section className="relative z-10 px-4 sm:px-6 lg:px-12 xl:px-24 pt-8 pb-16">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-amber-200">Our Consulting Expertise</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-[var(--it-section-heading)] dark:text-amber-200">
+          Our Consulting Expertise
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="relative z-10 bg-gray-900/50 border border-yellow-900/50 p-6 rounded-2xl backdrop-blur-sm hover:bg-gray-800/60 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/20 min-h-[250px] flex flex-col"
+              className="relative z-10 bg-[var(--it-card-bg)] border border-[var(--it-card-border)] p-6 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:bg-[var(--it-card-hover-bg)] min-h-[250px] flex flex-col dark:bg-gray-900/50 dark:border-yellow-900/50 dark:hover:bg-gray-800/60 dark:hover:shadow-yellow-500/20"
+              style={{ boxShadow: '0 18px 36px -24px var(--it-card-hover-shadow)' }}
             >
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4 border border-amber-700/50 shadow-md shadow-amber-600/20 flex-shrink-0">
-                  <feature.icon className="h-6 w-6 text-yellow-400" />
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center mr-4 border shadow-md flex-shrink-0 bg-[var(--it-icon-bg)] border-[var(--it-icon-border)] dark:bg-gray-800 dark:border-amber-700/50 dark:shadow-amber-600/20"
+                  style={{ boxShadow: '0 12px 24px -16px var(--it-icon-shadow)' }}
+                >
+                  <feature.icon className="h-6 w-6 text-[var(--it-icon-color)] dark:text-yellow-400" />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-xl lg:text-lg font-semibold text-amber-100">{feature.title}</h3>
+                  <h3 className="text-xl lg:text-lg font-semibold text-[var(--it-text-title)] dark:text-amber-100">
+                    {feature.title}
+                  </h3>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed flex-grow">{feature.description}</p>
+              <p className="leading-relaxed flex-grow text-[var(--it-text-description)] dark:text-gray-400">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
@@ -156,8 +173,10 @@ export default function ITConsultingPage() {
       {/* Consulting Packages Section */}
       <section className="relative z-10 px-4 sm:px-6 lg:px-12 xl:px-24 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-semibold text-amber-200 mb-4">IT Consulting Packages</h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[var(--it-section-heading)] dark:text-amber-200 mb-4">
+            IT Consulting Packages
+          </h2>
+          <p className="text-lg text-[var(--it-section-text)] dark:text-gray-300 max-w-3xl mx-auto">
             Start with a free consultation to understand your needs, then continue with ongoing strategic guidance.
           </p>
         </div>
@@ -166,7 +185,7 @@ export default function ITConsultingPage() {
           {consultingPackages.map((pkg, index) => (
             <div
               key={index}
-              className={`relative bg-gray-900/50 border ${pkg.popular ? 'border-amber-500/70 ring-2 ring-amber-500/50' : 'border-yellow-900/50'} p-8 rounded-2xl backdrop-blur-sm hover:bg-gray-800/60 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/20 min-h-[600px] flex flex-col`}
+              className={`relative bg-[var(--it-card-bg)] border border-[var(--it-card-border)] p-8 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:bg-[var(--it-card-hover-bg)] hover:shadow-[0_22px_44px_-28px_var(--it-card-hover-shadow)] min-h-[600px] flex flex-col shadow-[0_18px_36px_-26px_var(--it-card-hover-shadow)] dark:bg-gray-900/50 dark:border-yellow-900/50 dark:hover:bg-gray-800/60 dark:hover:shadow-amber-500/20 dark:shadow-none ${pkg.popular ? 'ring-2 ring-[var(--it-popular-ring)] dark:ring-amber-500/50' : ''}`}
             >
               {pkg.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -177,23 +196,26 @@ export default function ITConsultingPage() {
               )}
 
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mr-4 border border-amber-700/50 shadow-md shadow-amber-600/20 flex-shrink-0">
-                  <pkg.icon className="h-8 w-8 text-yellow-400" />
+                <div
+                  className="w-16 h-16 rounded-full flex items-center justify-center mr-4 border shadow-md flex-shrink-0 bg-[var(--it-icon-bg)] border-[var(--it-icon-border)] dark:bg-gray-800 dark:border-amber-700/50 dark:shadow-amber-600/20"
+                  style={{ boxShadow: '0 16px 32px -22px var(--it-icon-shadow)' }}
+                >
+                  <pkg.icon className="h-8 w-8 text-[var(--it-icon-color)] dark:text-yellow-400" />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-2xl font-semibold text-amber-100">{pkg.name}</h3>
-                  <p className="text-sm text-gray-400">{pkg.description}</p>
+                  <h3 className="text-2xl font-semibold text-[var(--it-text-title)] dark:text-amber-100">{pkg.name}</h3>
+                  <p className="text-sm text-[var(--it-text-description)] dark:text-gray-400">{pkg.description}</p>
                 </div>
               </div>
 
 
               <div className="flex-grow">
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-amber-200 mb-3">What You Get:</h4>
+                  <h4 className="text-lg font-semibold text-[var(--it-section-heading)] dark:text-amber-200 mb-3">What You Get:</h4>
                   <ul className="space-y-3">
                     {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start text-sm text-gray-300">
-                        <CheckIcon className="h-4 w-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                      <li key={featureIndex} className="flex items-start text-sm text-[var(--it-text-description)] dark:text-gray-300">
+                        <CheckIcon className="h-4 w-4 text-[var(--it-accent-green)] mr-2 mt-0.5 flex-shrink-0 dark:text-green-400" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -201,11 +223,11 @@ export default function ITConsultingPage() {
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-amber-200 mb-3">Key Benefits:</h4>
+                  <h4 className="text-lg font-semibold text-[var(--it-section-heading)] dark:text-amber-200 mb-3">Key Benefits:</h4>
                   <ul className="space-y-2">
                     {pkg.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-start text-sm text-gray-300">
-                        <TrendingUpIcon className="h-4 w-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
+                      <li key={benefitIndex} className="flex items-start text-sm text-[var(--it-text-description)] dark:text-gray-300">
+                        <TrendingUpIcon className="h-4 w-4 text-[var(--it-accent-amber)] mr-2 mt-0.5 flex-shrink-0 dark:text-amber-400" />
                         <span>{benefit}</span>
                       </li>
                     ))}
@@ -219,7 +241,7 @@ export default function ITConsultingPage() {
                     size="lg"
                     className={`w-full ${pkg.popular
                       ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white hover:from-amber-700 hover:to-yellow-700'
-                      : 'bg-gray-800 text-amber-100 hover:bg-gray-700 border border-amber-700/50'
+                      : 'border border-[var(--it-card-border)] bg-[var(--it-card-bg)] text-[var(--it-text-title)] hover:bg-[var(--it-card-hover-bg)] dark:bg-gray-800 dark:text-amber-100 dark:border-amber-700/50 dark:hover:bg-gray-700'
                     } transition duration-300 shadow-lg text-lg py-3`}
                   >
                     {pkg.ctaText}
@@ -231,46 +253,54 @@ export default function ITConsultingPage() {
         </div>
 
         {/* Value Proposition Section */}
-        <div className="bg-gradient-to-r from-amber-900/30 to-yellow-900/30 border border-amber-700/50 rounded-2xl p-8 backdrop-blur-sm">
+        <div
+          className="rounded-2xl p-8 backdrop-blur-sm border border-[var(--it-value-border)] dark:border-amber-700/50"
+          style={{ background: 'linear-gradient(135deg, var(--it-value-bg-from), var(--it-value-bg-to))' }}
+        >
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-semibold text-amber-100 mb-4">Why Choose Our IT Consulting?</h3>
-            <p className="text-gray-300 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-semibold text-[var(--it-value-title)] dark:text-amber-100 mb-4">Why Choose Our IT Consulting?</h3>
+            <p className="max-w-3xl mx-auto text-[var(--it-value-text)] dark:text-gray-300">
               Our consulting approach focuses on practical, actionable solutions that drive real business results.
               We understand the unique challenges facing modern businesses and provide technology guidance that works.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-600 to-yellow-600 flex items-center justify-center mx-auto mb-4">
+            <div className="text-center bg-[var(--it-value-card-bg)] border border-[var(--it-value-card-border)] rounded-xl p-6 dark:bg-transparent dark:border-amber-700/50">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: 'var(--it-value-icon-bg)' }}>
                 <BriefcaseIcon className="h-6 w-6 text-white" />
               </div>
-              <h4 className="text-lg font-semibold text-amber-100 mb-2">Market Understanding</h4>
-              <p className="text-sm text-gray-400">Deep understanding of diverse business environments and global technology landscapes</p>
+              <h4 className="text-lg font-semibold text-[var(--it-text-title)] dark:text-amber-100 mb-2">Market Understanding</h4>
+              <p className="text-sm text-[var(--it-value-card-text)] dark:text-gray-400">Deep understanding of diverse business environments and global technology landscapes</p>
             </div>
-            <div className="text-center">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-600 to-yellow-600 flex items-center justify-center mx-auto mb-4">
+            <div className="text-center bg-[var(--it-value-card-bg)] border border-[var(--it-value-card-border)] rounded-xl p-6 dark:bg-transparent dark:border-amber-700/50">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: 'var(--it-value-icon-bg)' }}>
                 <LightbulbIcon className="h-6 w-6 text-white" />
               </div>
-              <h4 className="text-lg font-semibold text-amber-100 mb-2">Practical Solutions</h4>
-              <p className="text-sm text-gray-400">Technology recommendations that are realistic, cost-effective, and implementable</p>
+              <h4 className="text-lg font-semibold text-[var(--it-text-title)] dark:text-amber-100 mb-2">Practical Solutions</h4>
+              <p className="text-sm text-[var(--it-value-card-text)] dark:text-gray-400">Technology recommendations that are realistic, cost-effective, and implementable</p>
             </div>
-            <div className="text-center">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-600 to-yellow-600 flex items-center justify-center mx-auto mb-4">
+            <div className="text-center bg-[var(--it-value-card-bg)] border border-[var(--it-value-card-border)] rounded-xl p-6 dark:bg-transparent dark:border-amber-700/50">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: 'var(--it-value-icon-bg)' }}>
                 <TrendingUpIcon className="h-6 w-6 text-white" />
               </div>
-              <h4 className="text-lg font-semibold text-amber-100 mb-2">Growth Focused</h4>
-              <p className="text-sm text-gray-400">Strategic guidance that positions your business for sustainable growth and success</p>
+              <h4 className="text-lg font-semibold text-[var(--it-text-title)] dark:text-amber-100 mb-2">Growth Focused</h4>
+              <p className="text-sm text-[var(--it-value-card-text)] dark:text-gray-400">Strategic guidance that positions your business for sustainable growth and success</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action Section */}
-      <section className="relative z-10 bg-gradient-to-r from-amber-800/70 to-yellow-800/50 py-20 mt-16">
+      <section
+        className="relative z-10 py-20 mt-16"
+        style={{ background: 'linear-gradient(135deg, var(--it-cta-bg-from), var(--it-cta-bg-to))' }}
+      >
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-amber-100 mb-4">Ready to Unlock Your Technological Potential?</h2>
-          <p className="text-lg text-yellow-200/90 max-w-2xl mx-auto mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-[var(--it-cta-title)] dark:text-amber-100">
+            Ready to Unlock Your Technological Potential?
+          </h2>
+          <p className="text-lg max-w-2xl mx-auto mb-8 text-[var(--it-cta-text)] dark:text-yellow-200/90">
             Partner with us to develop a winning IT strategy that aligns with your vision and drives tangible results.
           </p>
           <Link href="/contact">

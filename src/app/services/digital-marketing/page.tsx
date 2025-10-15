@@ -138,16 +138,23 @@ const pricingPlans = [
 
 const DigitalMarketingPage = () => {
   return (
-    <div className="relative min-h-screen text-foreground overflow-hidden">
-      {/* Background Gradient Layer */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent -z-10" />
+    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
+      {/* Background Layers */}
+      <div className="absolute inset-0 -z-20 block dark:hidden bg-[radial-gradient(circle_at_top,_rgba(125,211,252,0.32),_transparent_62%)]" />
+      <div className="absolute inset-0 -z-20 hidden dark:block bg-[radial-gradient(circle_at_top,_rgba(12,74,110,0.55),_transparent_70%)]" />
+      <div className="absolute inset-0 -z-10">
+        <div className="h-full w-full bg-gradient-to-b from-transparent via-[var(--digital-page-bg-overlay)] to-transparent dark:via-blue-900/10" />
+      </div>
 
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-4 py-12 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold pb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 animate-gradient-x">
+        <h1
+          className="text-5xl md:text-7xl font-bold pb-4 bg-clip-text text-transparent animate-gradient-x"
+          style={{ backgroundImage: 'linear-gradient(to right, var(--digital-hero-heading-from), var(--digital-hero-heading-via), var(--digital-hero-heading-to))' }}
+        >
           Amplify Your Brand with Digital Marketing
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+        <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-[var(--digital-hero-text)] dark:text-muted-foreground">
           Engage your audience, build community, and drive growth with our expert digital marketing and content creation services. We handle everything, so you can focus on your business.
         </p>
         <Link href="/contact">
@@ -159,22 +166,32 @@ const DigitalMarketingPage = () => {
 
       {/* Features Section */}
       <section className="relative z-10 px-4 sm:px-6 lg:px-12 xl:px-24 pt-8 pb-16">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-cyan-200">Our Digital Marketing Services</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-[var(--digital-section-heading)] dark:text-cyan-200">
+          Our Digital Marketing Services
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="relative z-10 bg-gray-900/50 border border-blue-900/50 p-6 rounded-2xl backdrop-blur-sm hover:bg-gray-800/60 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 min-h-[250px] flex flex-col"
+              className="relative z-10 bg-[var(--digital-card-bg)] border border-[var(--digital-card-border)] p-6 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:bg-[var(--digital-card-hover-bg)] min-h-[250px] flex flex-col dark:bg-gray-900/50 dark:border-blue-900/50 dark:hover:bg-gray-800/60 dark:hover:shadow-blue-500/20"
+              style={{ boxShadow: '0 18px 36px -24px var(--digital-card-hover-shadow)' }}
             >
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4 border border-cyan-700/50 shadow-md shadow-cyan-600/20 flex-shrink-0">
-                  <feature.icon className="h-6 w-6 text-blue-400" />
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center mr-4 border shadow-md flex-shrink-0 bg-[var(--digital-icon-bg)] border-[var(--digital-icon-border)] dark:bg-gray-800 dark:border-cyan-700/50 dark:shadow-cyan-600/20"
+                  style={{ boxShadow: '0 12px 24px -16px var(--digital-icon-shadow)' }}
+                >
+                  <feature.icon className="h-6 w-6 text-[var(--digital-icon-color)] dark:text-blue-400" />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-xl lg:text-lg font-semibold text-cyan-100">{feature.title}</h3>
+                  <h3 className="text-xl lg:text-lg font-semibold text-[var(--digital-text-title)] dark:text-cyan-100">
+                    {feature.title}
+                  </h3>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed flex-grow">{feature.description}</p>
+              <p className="leading-relaxed flex-grow text-[var(--digital-text-description)] dark:text-gray-400">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
@@ -183,8 +200,10 @@ const DigitalMarketingPage = () => {
       {/* Pricing Section */}
       <section className="relative z-10 px-4 sm:px-6 lg:px-12 xl:px-24 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-semibold text-cyan-200 mb-4">Digital Marketing Packages</h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[var(--digital-section-heading)] dark:text-cyan-200 mb-4">
+            Digital Marketing Packages
+          </h2>
+          <p className="text-lg text-[var(--digital-section-text)] dark:text-gray-300 max-w-3xl mx-auto">
             Choose the perfect package to amplify your brand presence and engage your audience across digital platforms.
           </p>
         </div>
@@ -193,7 +212,7 @@ const DigitalMarketingPage = () => {
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-gray-900/50 border ${plan.popular ? 'border-cyan-500/70 ring-2 ring-cyan-500/50' : 'border-blue-900/50'} p-6 rounded-2xl backdrop-blur-sm hover:bg-gray-800/60 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 min-h-[600px] flex flex-col`}
+              className={`relative bg-[var(--digital-card-bg)] border border-[var(--digital-card-border)] p-6 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:bg-[var(--digital-card-hover-bg)] hover:shadow-[0_22px_44px_-28px_var(--digital-card-hover-shadow)] min-h-[600px] flex flex-col shadow-[0_18px_36px_-26px_var(--digital-card-hover-shadow)] dark:bg-gray-900/50 dark:border-blue-900/50 dark:hover:bg-gray-800/60 dark:hover:shadow-cyan-500/20 dark:shadow-none ${plan.popular ? 'ring-2 ring-[var(--digital-popular-ring)] dark:ring-cyan-500/50' : ''}`}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -204,12 +223,15 @@ const DigitalMarketingPage = () => {
               )}
 
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4 border border-cyan-700/50 shadow-md shadow-cyan-600/20 flex-shrink-0">
-                  <plan.icon className="h-6 w-6 text-blue-400" />
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center mr-4 border shadow-md flex-shrink-0 bg-[var(--digital-icon-bg)] border-[var(--digital-icon-border)] dark:bg-gray-800 dark:border-cyan-700/50 dark:shadow-cyan-600/20"
+                  style={{ boxShadow: '0 12px 24px -16px var(--digital-icon-shadow)' }}
+                >
+                  <plan.icon className="h-6 w-6 text-[var(--digital-icon-color)] dark:text-blue-400" />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-xl font-semibold text-cyan-100">{plan.name}</h3>
-                  <p className="text-sm text-gray-400">{plan.description}</p>
+                  <h3 className="text-xl font-semibold text-[var(--digital-text-title)] dark:text-cyan-100">{plan.name}</h3>
+                  <p className="text-sm text-[var(--digital-text-description)] dark:text-gray-400">{plan.description}</p>
                 </div>
               </div>
 
@@ -217,8 +239,8 @@ const DigitalMarketingPage = () => {
               <div className="flex-grow">
                 <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start text-sm text-gray-300">
-                      <CheckIcon className="h-4 w-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                    <li key={featureIndex} className="flex items-start text-sm text-[var(--digital-text-description)] dark:text-gray-300">
+                      <CheckIcon className="h-4 w-4 text-[var(--digital-accent-green)] mr-2 mt-0.5 flex-shrink-0 dark:text-green-400" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -231,7 +253,7 @@ const DigitalMarketingPage = () => {
                     size="lg"
                     className={`w-full ${plan.popular
                       ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white hover:from-cyan-700 hover:to-blue-700'
-                      : 'bg-gray-800 text-cyan-100 hover:bg-gray-700 border border-cyan-700/50'
+                      : 'border border-[var(--digital-card-border)] bg-[var(--digital-card-bg)] text-[var(--digital-text-title)] hover:bg-[var(--digital-card-hover-bg)] dark:bg-gray-800 dark:text-cyan-100 dark:border-cyan-700/50 dark:hover:bg-gray-700'
                     } transition duration-300 shadow-lg`}
                   >
                     {plan.ctaText}
@@ -244,10 +266,15 @@ const DigitalMarketingPage = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="relative z-10 bg-gradient-to-r from-cyan-800/70 to-blue-800/50 py-20 mt-16">
+      <section
+        className="relative z-10 py-20 mt-16"
+        style={{ background: 'linear-gradient(135deg, var(--digital-cta-bg-from), var(--digital-cta-bg-to))' }}
+      >
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-cyan-100 mb-4">Ready to Dominate Digital Marketing?</h2>
-          <p className="text-lg text-blue-200/90 max-w-2xl mx-auto mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-[var(--digital-cta-title)] dark:text-cyan-100">
+            Ready to Dominate Digital Marketing?
+          </h2>
+          <p className="text-lg max-w-2xl mx-auto mb-8 text-[var(--digital-cta-text)] dark:text-blue-200/90">
             Let&#39;s craft a winning digital marketing strategy that elevates your brand and connects with your audience.
           </p>
           <Link href="/contact">

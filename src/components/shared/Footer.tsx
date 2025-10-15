@@ -57,14 +57,14 @@ export default function Footer() {
         }
       `}</style>
 
-            <footer className="w-full border-t border-gray-800/30 bg-gray-950/90 backdrop-blur-md pt-12">
-                <div className="container max-w-screen-2xl px-12 mx-auto">
-                    <div className="grid md:grid-cols-2 gap-10">
+            <footer className="w-full border-t border-[var(--footer-border)] bg-[var(--footer-bg)] backdrop-blur-md">
+                <div className="container max-w-screen-2xl px-6 md:px-12 py-6 mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 md:gap-10">
                         {/* Left Column */}
                         <div className="space-y-6">
                             {/* Logo */}
                             <Link href="/" className="flex items-center">
-                                <span className="font-bold text-white text-3xl">
+                                <span className="font-bold text-[var(--footer-text)] text-3xl">
                                     <span>Inter</span>
                                     <span className="animated-gradient bg-clip-text text-transparent">
                                         connect
@@ -73,13 +73,13 @@ export default function Footer() {
                             </Link>
 
                             {/* Tagline */}
-                            <p className="text-gray-400 max-w-md">
+                            <p className="text-[var(--footer-text-muted)] max-w-md">
                                 Your connection to the digital world.
                             </p>
 
                             {/* Contact Info */}
-                            <div className="flex items-center space-x-2 text-gray-300">
-                                <Mail className="h-5 w-5 text-blue-400" />
+                            <div className="flex items-center space-x-2 text-[var(--footer-text-muted)]">
+                                <Mail className="h-5 w-5 text-[var(--footer-icon)]" />
                                 <a
                                     href="mailto:info@interconnect.co.ke"
                                     className="hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent transition-all duration-200"
@@ -93,13 +93,13 @@ export default function Footer() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                             {/* Main Links */}
                             <div>
-                                <h3 className="text-white font-medium mb-4">Quick Links</h3>
+                                <h3 className="text-[var(--footer-text)] font-medium mb-4">Quick Links</h3>
                                 <ul className="space-y-3">
                                     {quickLinks.map((link) => (
                                         <li key={link.href}>
                                             <Link
                                                 href={link.href}
-                                                className="text-gray-300 flex items-center group hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent transition-all duration-200"
+                                                className="text-[var(--footer-text-muted)] flex items-center group hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent transition-all duration-200"
                                             >
                                                 <link.icon className="mr-2 h-4 w-4 group-hover:text-blue-400 transition-colors duration-200" />
                                                 <span>{link.label}</span>
@@ -111,13 +111,13 @@ export default function Footer() {
 
                             {/* Services Links */}
                             <div>
-                                <h3 className="text-white font-medium mb-4">Services</h3>
+                                <h3 className="text-[var(--footer-text)] font-medium mb-4">Services</h3>
                                 <ul className="space-y-3">
                                     {serviceLinks.map((service) => (
                                         <li key={service.href}>
                                             <Link
                                                 href={service.href}
-                                                className="text-gray-300 flex items-center group hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent transition-all duration-200"
+                                                className="text-[var(--footer-text-muted)] flex items-center group hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 hover:bg-clip-text hover:text-transparent transition-all duration-200"
                                             >
                                                 <service.icon className="mr-2 h-4 w-4 group-hover:text-blue-400 transition-colors duration-200" />
                                                 <span>{service.label}</span>
@@ -130,7 +130,7 @@ export default function Footer() {
                     </div>
                 </div>
                 {/* Copyright */}
-                <div className="text-gray-500 text-sm text-left sm:text-center bg-gray-950/80 py-8 px-12">
+                <div className="text-[var(--footer-copyright-text)] text-sm text-left sm:text-center bg-[var(--footer-copyright-bg)] py-4 px-6 md:px-12">
                     © {new Date().getFullYear()} Interconnect. All rights reserved.
                 </div>
             </footer>

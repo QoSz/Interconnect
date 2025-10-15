@@ -73,23 +73,23 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent pointer-events-none" />
             
             {/* Floating elements for decoration */}
-            <div className="absolute top-1/4 left-[10%] md:left-1/5 w-32 h-32 md:w-64 md:h-64 rounded-full bg-blue-600/10 blur-3xl" 
-                 style={{ animation: 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' }} />
-            <div className="absolute bottom-1/4 right-[10%] md:right-1/5 w-36 h-36 md:w-72 md:h-72 rounded-full bg-indigo-600/10 blur-3xl" 
-                 style={{ animation: 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite', animationDelay: '700ms' }} />
+            <div className="absolute top-1/4 left-[10%] md:left-1/5 w-32 h-32 md:w-64 md:h-64 rounded-full blur-3xl"
+                 style={{ animation: 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite', backgroundColor: 'var(--hero-blur-accent-1)' }} />
+            <div className="absolute bottom-1/4 right-[10%] md:right-1/5 w-36 h-36 md:w-72 md:h-72 rounded-full blur-3xl"
+                 style={{ animation: 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite', animationDelay: '700ms', backgroundColor: 'var(--hero-blur-accent-2)' }} />
             
             <div className="z-10 max-w-5xl w-full">
                 <div className="min-h-[80px] sm:min-h-[120px] md:min-h-[160px] flex items-center justify-center mb-4 md:mb-6">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl text-purple-200 font-bold leading-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl text-[var(--hero-heading)] font-bold leading-tight">
                         {displayText}
-                        <span className="inline-block w-0.5 h-6 sm:w-1 sm:h-8 md:w-1.5 md:h-10 lg:h-12 bg-purple-400 ml-0.5 sm:ml-1" 
-                              style={{ animation: 'blink 1s step-end infinite' }}>
+                        <span className="inline-block w-0.5 h-6 sm:w-1 sm:h-8 md:w-1.5 md:h-10 lg:h-12 ml-0.5 sm:ml-1"
+                              style={{ animation: 'blink 1s step-end infinite', backgroundColor: 'var(--hero-cursor)' }}>
                         </span>
                     </h1>
                 </div>
-                
-                <p className="text-base sm:text-lg text-gray-300 mb-5 md:mb-8 max-w-3xl mx-auto px-2">
-                    Specializing in Web Development, AI Automation, 
+
+                <p className="text-base sm:text-lg text-[var(--hero-subheading)] mb-5 md:mb-8 max-w-3xl mx-auto px-2">
+                    Specializing in Web Development, AI Automation,
                     Digital Marketing, and IT Consulting
                 </p>
                 
