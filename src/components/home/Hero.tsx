@@ -70,7 +70,7 @@ export default function Hero() {
     return (
         <div className="relative min-h-[80vh] sm:min-h-[90vh] flex flex-col items-center justify-center text-center px-4 md:px-8 py-8 md:py-16">
             {/* Gradient background effect */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-sky-900/20 dark:via-purple-900/20 to-transparent pointer-events-none" />
             
             {/* Floating elements for decoration */}
             <div className="absolute top-1/4 left-[10%] md:left-1/5 w-32 h-32 md:w-64 md:h-64 rounded-full blur-3xl"
@@ -94,7 +94,7 @@ export default function Hero() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                    <Link href="/services" className="w-auto inline-block px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transform hover:scale-105 transition duration-300 shadow-lg shadow-indigo-500/25 text-sm sm:text-base">
+                    <Link href="/services" className="w-auto inline-block px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-sky-500 to-blue-500 dark:from-purple-600 dark:to-indigo-600 text-white font-medium rounded-lg hover:from-sky-600 hover:to-blue-600 dark:hover:from-purple-700 dark:hover:to-indigo-700 transform hover:scale-105 transition duration-300 shadow-lg shadow-sky-500/25 dark:shadow-indigo-500/25 text-sm sm:text-base">
                         Get Started
                     </Link>
                 </div>

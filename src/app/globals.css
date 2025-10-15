@@ -32,85 +32,85 @@ body {
   --nav-hover: rgba(243, 244, 246, 0.6);
 
   /* Hero colors */
-  --hero-heading: #6b21a8;
+  --hero-heading: #0284c7;
   --hero-subheading: #4b5563;
-  --hero-blur-accent-1: rgba(147, 51, 234, 0.15);
-  --hero-blur-accent-2: rgba(99, 102, 241, 0.15);
-  --hero-cursor: #a855f7;
+  --hero-blur-accent-1: rgba(14, 165, 233, 0.15);
+  --hero-blur-accent-2: rgba(59, 130, 246, 0.15);
+  --hero-cursor: #38bdf8;
 
   /* Gradient accent colors */
   --gradient-blue: #3b82f6;
   --gradient-cyan: #22d3ee;
 
   /* Process section colors */
-  --process-heading: #6b21a8;
+  --process-heading: #0284c7;
   --process-text: #4b5563;
-  --process-icon: #9333ea;
-  --process-blur-1: rgba(99, 102, 241, 0.15);
-  --process-blur-2: rgba(147, 51, 234, 0.15);
+  --process-icon: #0ea5e9;
+  --process-blur-1: rgba(14, 165, 233, 0.15);
+  --process-blur-2: rgba(59, 130, 246, 0.15);
   --process-card-bg: rgba(255, 255, 255, 0.6);
-  --process-card-border: rgba(168, 85, 247, 0.3);
+  --process-card-border: rgba(14, 165, 233, 0.3);
   --process-card-hover-bg: rgba(255, 255, 255, 0.8);
-  --process-card-hover-shadow: rgba(168, 85, 247, 0.2);
+  --process-card-hover-shadow: rgba(14, 165, 233, 0.2);
   --process-icon-bg: #f3f4f6;
-  --process-icon-border: rgba(168, 85, 247, 0.4);
-  --process-icon-shadow: rgba(168, 85, 247, 0.15);
-  --process-badge-bg: rgba(168, 85, 247, 0.15);
-  --process-badge-text: #7c3aed;
-  --process-step-title: #4c1d95;
+  --process-icon-border: rgba(14, 165, 233, 0.4);
+  --process-icon-shadow: rgba(14, 165, 233, 0.15);
+  --process-badge-bg: rgba(14, 165, 233, 0.15);
+  --process-badge-text: #0284c7;
+  --process-step-title: #0c4a6e;
   --process-step-description: #6b7280;
 
   /* WhyChooseUs section colors */
   --why-section-bg-start: #f8f9fa;
   --why-section-bg-end: #e9ecef;
-  --why-heading: #6b21a8;
-  --why-blur-1: rgba(99, 102, 241, 0.15);
-  --why-blur-2: rgba(147, 51, 234, 0.15);
+  --why-heading: #0284c7;
+  --why-blur-1: rgba(14, 165, 233, 0.15);
+  --why-blur-2: rgba(59, 130, 246, 0.15);
   --why-card-bg: rgba(255, 255, 255, 0.6);
-  --why-card-border: rgba(168, 85, 247, 0.3);
+  --why-card-border: rgba(14, 165, 233, 0.3);
   --why-card-hover-bg: rgba(255, 255, 255, 0.8);
-  --why-card-hover-shadow: rgba(168, 85, 247, 0.2);
+  --why-card-hover-shadow: rgba(14, 165, 233, 0.2);
   --why-icon-bg: #f3f4f6;
-  --why-icon-border: rgba(168, 85, 247, 0.4);
-  --why-icon-shadow: rgba(168, 85, 247, 0.15);
-  --why-icon-color: #9333ea;
-  --why-card-title: #4c1d95;
+  --why-icon-border: rgba(14, 165, 233, 0.4);
+  --why-icon-shadow: rgba(14, 165, 233, 0.15);
+  --why-icon-color: #0ea5e9;
+  --why-card-title: #0c4a6e;
   --why-card-description: #6b7280;
 
   /* FAQ section colors */
   --faq-section-bg-start: #f8f9fa;
   --faq-section-bg-end: #e9ecef;
-  --faq-heading: #6b21a8;
+  --faq-heading: #0284c7;
   --faq-text: #4b5563;
-  --faq-blur-1: rgba(99, 102, 241, 0.15);
-  --faq-blur-2: rgba(147, 51, 234, 0.15);
-  --faq-trigger-text: #4c1d95;
-  --faq-trigger-hover: #7c3aed;
+  --faq-blur-1: rgba(14, 165, 233, 0.15);
+  --faq-blur-2: rgba(59, 130, 246, 0.15);
+  --faq-trigger-text: #0c4a6e;
+  --faq-trigger-hover: #0284c7;
   --faq-content-text: #6b7280;
 
   /* ContactCTA colors */
-  --cta-bg-start: rgba(248, 249, 250, 0.95);
-  --cta-bg-end: rgba(233, 236, 239, 0.98);
-  --cta-bg-hover-start: rgba(243, 244, 246, 0.95);
-  --cta-bg-hover-end: rgba(229, 231, 235, 0.98);
-  --cta-border: rgba(168, 85, 247, 0.2);
-  --cta-border-hover: rgba(168, 85, 247, 0.4);
-  --cta-shadow-hover: rgba(168, 85, 247, 0.2);
-  --cta-overlay-start: rgba(147, 51, 234, 0.08);
-  --cta-overlay-mid: rgba(99, 102, 241, 0.04);
-  --cta-overlay-end: rgba(88, 28, 135, 0.12);
-  --cta-animated-start: rgba(147, 51, 234, 0.05);
-  --cta-animated-end: rgba(99, 102, 241, 0.05);
+  --cta-bg-start: rgba(240, 249, 255, 0.95);
+  --cta-bg-end: rgba(224, 242, 254, 0.98);
+  --cta-bg-hover-start: rgba(224, 242, 254, 0.95);
+  --cta-bg-hover-end: rgba(207, 232, 252, 0.98);
+  --cta-border: rgba(14, 165, 233, 0.2);
+  --cta-border-hover: rgba(14, 165, 233, 0.4);
+  --cta-shadow-hover: rgba(14, 165, 233, 0.2);
+  --cta-overlay-start: rgba(14, 165, 233, 0.08);
+  --cta-overlay-mid: rgba(59, 130, 246, 0.04);
+  --cta-overlay-end: rgba(3, 105, 161, 0.12);
+  --cta-animated-start: rgba(14, 165, 233, 0.05);
+  --cta-animated-end: rgba(59, 130, 246, 0.05);
   --cta-title: #1f2937;
   --cta-description: #4b5563;
-  --cta-button-bg-start: #9333ea;
-  --cta-button-bg-end: #4f46e5;
-  --cta-button-hover-start: #a855f7;
-  --cta-button-hover-end: #6366f1;
+  --cta-button-bg-start: #0ea5e9;
+  --cta-button-bg-end: #3b82f6;
+  --cta-button-hover-start: #38bdf8;
+  --cta-button-hover-end: #60a5fa;
   --cta-button-text: #ffffff;
-  --cta-button-shadow: rgba(147, 51, 234, 0.3);
-  --cta-button-border: rgba(168, 85, 247, 0.2);
-  --cta-button-border-hover: rgba(168, 85, 247, 0.4);
+  --cta-button-shadow: rgba(14, 165, 233, 0.3);
+  --cta-button-border: rgba(14, 165, 233, 0.2);
+  --cta-button-border-hover: rgba(14, 165, 233, 0.4);
 
   /* Services section colors */
   --services-section-bg-start: #f8f9fa;

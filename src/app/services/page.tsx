@@ -72,7 +72,7 @@ export default function Services() {
             <div className="max-w-7xl mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-16 sm:mb-20">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700 dark:from-purple-400 dark:to-indigo-500 mb-4">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-500 dark:from-purple-400 dark:to-indigo-500 mb-4">
                         Our Services
                     </h1>
                     <p className="text-lg sm:text-xl text-[var(--services-text)] max-w-3xl mx-auto">
