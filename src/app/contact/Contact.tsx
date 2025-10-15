@@ -111,7 +111,7 @@ export default function Contact() {
                                         <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-purple-600 dark:text-purple-400" />
                                     </div>
                                     <div className="ml-3 sm:ml-4 min-w-0">
-                                        <h3 className="text-lg sm:text-xl font-bold text-purple-700 dark:text-purple-200 mb-1 sm:mb-1.5">Phone (Kenya & UK)</h3>
+                                        <h3 className="text-lg sm:text-xl font-bold text-purple-700 dark:text-purple-200 mb-1 sm:mb-1.5">Phone</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-gray-300">
                                             <a href="tel:+254788871946" className="hover:underline">+254 788 871 946</a>
                                         </p>
