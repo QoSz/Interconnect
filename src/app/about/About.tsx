@@ -7,21 +7,28 @@ const teamMembers = [
     id: 1,
     name: "Yash Shah",
     title: "Co-Founder & Tech Lead",
-    description: "Yash is a passionate technologist and problem solver, dedicated to crafting innovative and efficient digital solutions. He leads our development efforts with a keen eye for detail and a drive for excellence.",
+    description: [
+      "I'm Yash Shah, a computer science graduate who can't help but chase what's next. I live at the intersection of code, creativity, and understanding how people think, where technology meets the mind, and innovation meets real purpose.",
+      "Right now, I'm exploring AI, Blockchain, cryptocurrency, and DeFi. I love building systems that challenge how things have always been done, that reimagine how we interact with value, trust, and intelligence. I work with Python, JavaScript/TypeScript, Java, and C/C++, and I focus on web development, cyber security, and network engineering. But I don't just write code, I design experiences. I care about UI/UX and graphic design because I think about the person using what I build.",
+      "I believe in quality over quantity. Always. When I'm debugging a system at 2 AM or designing an interface, I give it everything. I don't do half-measures.",
+      "When I'm not coding, you'll find me playing padel or watching F1, tennis, or football. Sports teach me things code can't - how to perform under pressure, how to read patterns in real-time, how to stay resilient when things don't go my way.",
+      "I read a lot about psychology and finance because they connect to everything I do. I chase ideas that challenge how I think, books that shift my perspective, conversations that make me uncomfortable in the best way. I try to look at situations objectively, strip away the noise, and see what's actually there. Whether I'm analyzing markets, debugging human behavior, or diving into research papers, I'm always asking: What am I missing? What assumptions am I making?",
+      "I push myself to keep evolving, stay fit, stay sharp, and keep stepping into territories that scare me a little. That's where real growth happens.",
+    ],
     linkedin: "https://www.linkedin.com/in/yashashah7/",
   },
   {
     id: 2,
     name: "Nirav Challa",
     title: "Co-Founder & Strategy Lead",
-    description: "Nirav brings strategic vision and a client-focused approach to Interconnect. He excels at understanding business needs and translating them into impactful digital strategies that drive growth.",
+    description: ["Nirav brings strategic vision and a client-focused approach to Interconnect. He excels at understanding business needs and translating them into impactful digital strategies that drive growth."],
     linkedin: "https://www.linkedin.com/in/niravchalla/",
   },
     {
     id: 3,
     name: "Dhruv Patel",
     title: "Technical Director",
-    description: "Dhruv is a skilled web developer and technology lead who guides Interconnect technical direction. Focused on creating efficient, scalable, and user-centered digital solutions that drive real results.",
+    description: ["Dhruv is a skilled web developer and technology lead who guides Interconnect technical direction. Focused on creating efficient, scalable, and user-centered digital solutions that drive real results."],
     linkedin: "https://www.linkedin.com/in/dhruv-patel-a40ba5222/",
   },
 ];
@@ -52,7 +59,7 @@ export default function About() {
         </div>
 
         {/* Team Members Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 gap-8 lg:gap-12 max-w-7xl mx-auto">
           {teamMembers.map((member) => (
             <div
               key={member.id}
@@ -72,9 +79,15 @@ export default function About() {
                 {member.title}
               </p>
               {/* Description */}
-              <p className="text-slate-600 dark:text-gray-300/90 text-base leading-relaxed mb-6">
-                {member.description}
-              </p>
+              <div className="text-slate-600 dark:text-gray-300/90 text-base leading-relaxed mb-6 space-y-4 text-left">
+                {Array.isArray(member.description) ? (
+                  member.description.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))
+                ) : (
+                  <p>{member.description}</p>
+                )}
+              </div>
               
               {/* LinkedIn Button */}
               <a
